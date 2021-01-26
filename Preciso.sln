@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preciso.Android", "Preciso\Preciso.Android\Preciso.Android.csproj", "{C2FCA0F5-F53D-4B42-AA9D-F6498291753B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preciso.Android", "Preciso.Android\Preciso.Android.csproj", "{C2FCA0F5-F53D-4B42-AA9D-F6498291753B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preciso.iOS", "Preciso\Preciso.iOS\Preciso.iOS.csproj", "{70080D42-9B43-427C-A77E-016422A77AF5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preciso.iOS", "Preciso.iOS\Preciso.iOS.csproj", "{70080D42-9B43-427C-A77E-016422A77AF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preciso", "Preciso\Preciso\Preciso.csproj", "{D23D0413-8D03-4A02-B3E8-551CAC884DF5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preciso", "Preciso\Preciso.csproj", "{D23D0413-8D03-4A02-B3E8-551CAC884DF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
