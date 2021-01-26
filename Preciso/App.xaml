@@ -9,6 +9,7 @@
                 <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="BackgroundColor" Value="#1976D2" />
                 <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="Margin" Value="0,10,0,0" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="Preciso.Views.NeedServicePage"
+			 Title="Solicitar Serviço">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowDefinitions="*,*,*,150,*,*" Padding="15">
+                <Entry Grid.Row="0"
+					   Placeholder="Nome" />
+                <Entry Grid.Row="1"
+					   Placeholder="Contato" />
+                <Entry Grid.Row="2"
+                       Placeholder="Tipo de Serviço" />
+                <Editor Grid.Row="3"
+                        Placeholder="Descrição do Serviço"
+                        HeightRequest="150" />
+
+                <Button Grid.Row="4"
+					Style="{StaticResource StyleButton}"
+					Text="Enviar Imagem do Serviço"/>
+                <Button Grid.Row="5"
+					Style="{StaticResource StyleButton}"
+					Text="Solicitar Serviço" />
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
