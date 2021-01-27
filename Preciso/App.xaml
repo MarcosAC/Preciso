@@ -11,6 +11,10 @@
                 <Setter Property="CornerRadius" Value="5" />
                 <Setter Property="Margin" Value="0,10,0,0" />
             </Style>
+
+            <Style TargetType="Entry" x:Key="StyleEntry">                
+                <Setter Property="Margin" Value="0,10,0,0" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
