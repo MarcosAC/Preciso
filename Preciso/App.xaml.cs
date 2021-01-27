@@ -11,7 +11,7 @@ namespace Preciso
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new ProfissionalRegisterPageView());
+            MainPage = new NavigationPage(new ListServicespageView());
         }
 
         protected override void OnStart()
