@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Preciso.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NeedServicePage : ContentPage
+    public partial class ProfissionalRegisterPageView : ContentPage
     {
-        public NeedServicePage()
+        public ProfissionalRegisterPageView()
         {
             InitializeComponent();
         }

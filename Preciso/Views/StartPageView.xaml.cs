@@ -19,7 +19,7 @@ namespace Preciso.Views
 
         private void On_Clicked(object sender, EventArgs e)
         {
-            App.Current.MainPage.Navigation.PushAsync(new NeedServicePage());
+            App.Current.MainPage.Navigation.PushAsync(new NeedServicePageView());
         }
     }
 }
