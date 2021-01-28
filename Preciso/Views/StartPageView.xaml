@@ -9,10 +9,11 @@
 
             <Button Style="{StaticResource StyleButton}"
                     Text="Eu Preciso"                    
-                    Clicked="On_Clicked" />
+                    Clicked="On_ClickedBtnPreciso" />
 
             <Button Style="{StaticResource StyleButton}" 
-                    Text="Sou Profisional" />
+                    Text="Sou Profisional"
+                     Clicked="On_ClickedBtnProfissional" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

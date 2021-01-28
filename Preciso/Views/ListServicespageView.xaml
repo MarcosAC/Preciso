@@ -13,9 +13,32 @@
                    HasShadow="True">
 
                     <StackLayout>
-                        <Label Text="Troca de chuveiro" FontSize="Medium" FontAttributes="Bold" />
+                        <Label Text="Troca de chuveiro"
+                               FontSize="Medium"
+                               FontAttributes="Bold" />
 
-                        <Label Text="Preciso de troca de..." FontSize="Small" />
+                        <Label Text="Preciso de troca de..."
+                               FontSize="Small" />
+                    </StackLayout>
+                </Frame>
+
+                <Frame BorderColor="White"
+                   CornerRadius="5"
+                   Padding="15"
+                   Margin="0,0,0,10"
+                   HasShadow="True">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped" />
+                    </Frame.GestureRecognizers>
+
+                    <StackLayout>
+                        <Label Text="Troca de chuveiro"
+                               FontSize="Medium"
+                               FontAttributes="Bold" />
+
+                        <Label Text="Preciso de troca de..."
+                               FontSize="Small" />
                     </StackLayout>
                 </Frame>
 
@@ -26,9 +49,12 @@
                    HasShadow="True">
 
                     <StackLayout>
-                        <Label Text="Troca de chuveiro" FontSize="Medium" FontAttributes="Bold" />
+                        <Label Text="Troca de chuveiro"
+                               FontSize="Medium"
+                               FontAttributes="Bold" />
 
-                        <Label Text="Preciso de troca de..." FontSize="Small" />
+                        <Label Text="Preciso de troca de..."
+                               FontSize="Small" />
                     </StackLayout>
                 </Frame>
 
@@ -39,9 +65,12 @@
                    HasShadow="True">
 
                     <StackLayout>
-                        <Label Text="Troca de chuveiro" FontSize="Medium" FontAttributes="Bold" />
+                        <Label Text="Troca de chuveiro"
+                               FontSize="Medium"
+                               FontAttributes="Bold" />
 
-                        <Label Text="Preciso de troca de..." FontSize="Small" />
+                        <Label Text="Preciso de troca de..."
+                               FontSize="Small" />
                     </StackLayout>
                 </Frame>
 
@@ -52,9 +81,12 @@
                    HasShadow="True">
 
                     <StackLayout>
-                        <Label Text="Troca de chuveiro" FontSize="Medium" FontAttributes="Bold" />
+                        <Label Text="Troca de chuveiro"
+                               FontSize="Medium"
+                               FontAttributes="Bold" />
 
-                        <Label Text="Preciso de troca de..." FontSize="Small" />
+                        <Label Text="Preciso de troca de..."
+                               FontSize="Small" />
                     </StackLayout>
                 </Frame>
 
@@ -65,9 +97,12 @@
                    HasShadow="True">
 
                     <StackLayout>
-                        <Label Text="Troca de chuveiro" FontSize="Medium" FontAttributes="Bold" />
+                        <Label Text="Troca de chuveiro"
+                               FontSize="Medium"
+                               FontAttributes="Bold" />
 
-                        <Label Text="Preciso de troca de..." FontSize="Small" />
+                        <Label Text="Preciso de troca de..."
+                               FontSize="Small" />
                     </StackLayout>
                 </Frame>
 
@@ -78,9 +113,12 @@
                    HasShadow="True">
 
                     <StackLayout>
-                        <Label Text="Troca de chuveiro" FontSize="Medium" FontAttributes="Bold" />
+                        <Label Text="Troca de chuveiro"
+                               FontSize="Medium"
+                               FontAttributes="Bold" />
 
-                        <Label Text="Preciso de troca de..." FontSize="Small" />
+                        <Label Text="Preciso de troca de..."
+                               FontSize="Small" />
                     </StackLayout>
                 </Frame>
 
@@ -91,9 +129,12 @@
                    HasShadow="True">
 
                     <StackLayout>
-                        <Label Text="Troca de chuveiro" FontSize="Medium" FontAttributes="Bold" />
+                        <Label Text="Troca de chuveiro"
+                               FontSize="Medium"
+                               FontAttributes="Bold" />
 
-                        <Label Text="Preciso de troca de..." FontSize="Small" />
+                        <Label Text="Preciso de troca de..."
+                               FontSize="Small" />
                     </StackLayout>
                 </Frame>
 
@@ -104,9 +145,12 @@
                    HasShadow="True">
 
                     <StackLayout>
-                        <Label Text="Troca de chuveiro" FontSize="Medium" FontAttributes="Bold" />
+                        <Label Text="Troca de chuveiro"
+                               FontSize="Medium"
+                               FontAttributes="Bold" />
 
-                        <Label Text="Preciso de troca de..." FontSize="Small" />
+                        <Label Text="Preciso de troca de..."
+                               FontSize="Small" />
                     </StackLayout>
                 </Frame>
 
@@ -117,25 +161,14 @@
                    HasShadow="True">
 
                     <StackLayout>
-                        <Label Text="Troca de chuveiro" FontSize="Medium" FontAttributes="Bold" />
+                        <Label Text="Troca de chuveiro"
+                               FontSize="Medium"
+                               FontAttributes="Bold" />
 
-                        <Label Text="Preciso de troca de..." FontSize="Small" />
+                        <Label Text="Preciso de troca de..."
+                               FontSize="Small" />
                     </StackLayout>
                 </Frame>
-
-                <Frame BorderColor="White"
-                   CornerRadius="5"
-                   Padding="15"
-                   Margin="0,0,0,10"
-                   HasShadow="True">
-
-                    <StackLayout>
-                        <Label Text="Troca de chuveiro" FontSize="Medium" FontAttributes="Bold" />
-
-                        <Label Text="Preciso de troca de..." FontSize="Small" />
-                    </StackLayout>
-                </Frame>
-
             </StackLayout>
         </ScrollView>       
     </ContentPage.Content>
