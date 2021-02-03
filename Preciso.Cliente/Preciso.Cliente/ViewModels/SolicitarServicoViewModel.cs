@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Helpers;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-namespace Preciso.Profissional.ViewModels
+namespace Preciso.Cliente.ViewModels
 {
     public class SolicitarServicoViewModel : BaseViewModel
     {
