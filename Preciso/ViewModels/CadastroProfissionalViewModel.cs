@@ -1,5 +1,4 @@
 ﻿using Preciso.Models;
-using Preciso.ViewModels;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;

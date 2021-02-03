@@ -3,6 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Preciso.Cliente.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button" x:Key="StyleButton">
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="BackgroundColor" Value="#1976D2" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="Margin" Value="0,10,0,0" />
+            </Style>
 
+            <Style TargetType="Entry" x:Key="StyleEntry">
+                <Setter Property="Margin" Value="0,10,0,0" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -13,7 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preciso.Cliente.Android", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preciso.Cliente.iOS", "Preciso.Cliente\Preciso.Cliente.iOS\Preciso.Cliente.iOS.csproj", "{7A8EC7E1-CC2E-4FE7-80CD-D41E7B40AA53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preciso.Cliente", "Preciso.Cliente\Preciso.Cliente\Preciso.Cliente.csproj", "{AEFB0F78-95A8-482A-9245-F2FD21EEB988}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Preciso.Cliente", "Preciso.Cliente\Preciso.Cliente\Preciso.Cliente.csproj", "{AEFB0F78-95A8-482A-9245-F2FD21EEB988}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{EC18B3DB-7837-43F2-A989-0F1C878B4E0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{390C55FC-1B1C-4E47-963E-64EC0D15DD04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,9 +123,24 @@ Global
 		{AEFB0F78-95A8-482A-9245-F2FD21EEB988}.Release|iPhone.Build.0 = Release|Any CPU
 		{AEFB0F78-95A8-482A-9245-F2FD21EEB988}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{AEFB0F78-95A8-482A-9245-F2FD21EEB988}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{390C55FC-1B1C-4E47-963E-64EC0D15DD04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{390C55FC-1B1C-4E47-963E-64EC0D15DD04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{390C55FC-1B1C-4E47-963E-64EC0D15DD04}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{390C55FC-1B1C-4E47-963E-64EC0D15DD04}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{390C55FC-1B1C-4E47-963E-64EC0D15DD04}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{390C55FC-1B1C-4E47-963E-64EC0D15DD04}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{390C55FC-1B1C-4E47-963E-64EC0D15DD04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{390C55FC-1B1C-4E47-963E-64EC0D15DD04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{390C55FC-1B1C-4E47-963E-64EC0D15DD04}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{390C55FC-1B1C-4E47-963E-64EC0D15DD04}.Release|iPhone.Build.0 = Release|Any CPU
+		{390C55FC-1B1C-4E47-963E-64EC0D15DD04}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{390C55FC-1B1C-4E47-963E-64EC0D15DD04}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{390C55FC-1B1C-4E47-963E-64EC0D15DD04} = {EC18B3DB-7837-43F2-A989-0F1C878B4E0C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9779CC1C-356F-4934-94A4-439CBCCDD3D8}

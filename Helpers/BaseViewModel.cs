@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Preciso.Profissional.ViewModels
+namespace Helpers
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
