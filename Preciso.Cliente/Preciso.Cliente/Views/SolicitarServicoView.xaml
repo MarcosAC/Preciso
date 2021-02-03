@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			 x:Class="Preciso.Views.NeedServicePageView"
-			 Title="Solicitar Serviço">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Preciso.Cliente.Views.SolicitarServicoView"
+             Title="Solicitar Serviço">
     <ContentPage.Content>
         <ScrollView>
             <Grid RowDefinitions="*,*,*,150,*,*" Padding="15">
@@ -12,7 +12,7 @@
 					   Placeholder="Contato" />
                 <Entry Grid.Row="2"
                        Placeholder="Tipo de Serviço" />
-                
+
                 <Editor Grid.Row="3"
                         Placeholder="Descrição do Serviço"
                         HeightRequest="150" />

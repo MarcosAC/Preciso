@@ -13,7 +13,7 @@ namespace Preciso.Cliente.Views
 
         private void On_ClickedBtnPreciso(object sender, System.EventArgs e)
         {
-
+            App.Current.MainPage.Navigation.PushAsync(new SolicitarServicoView());
         }
     }
 }
