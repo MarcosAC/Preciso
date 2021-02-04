@@ -16,16 +16,31 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\ListServicespageView.xaml">
+    <Compile Update="Views\ListaServicosView.xaml.cs">
+      <DependentUpon>ListaServicosView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdicionarProfissionalView.xaml.cs">
+      <DependentUpon>AdicionarProfissionalView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DetalheServicoView.xaml.cs">
+      <DependentUpon>DetalheServicoView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\ListaServicosView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\LoginPageView.xaml">
+    <EmbeddedResource Update="Views\LoginView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ProfissionalRegisterPageView.xaml">
+    <EmbeddedResource Update="Views\AdicionarProfissionalView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ServicesDetailspageView.xaml">
+    <EmbeddedResource Update="Views\DetalheServicoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

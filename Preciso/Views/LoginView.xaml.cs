@@ -4,9 +4,9 @@ using Xamarin.Forms.Xaml;
 namespace Preciso.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPageView : ContentPage
+    public partial class LoginView : ContentPage
     {
-        public LoginPageView()
+        public LoginView()
         {
             InitializeComponent();
         }

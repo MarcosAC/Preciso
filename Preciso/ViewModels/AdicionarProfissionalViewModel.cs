@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace Preciso.Profissional.ViewModels
 {
-    public class CadastroProfissionalViewModel : BaseViewModel
+    public class AdicionarProfissionalViewModel : BaseViewModel
     {
         private string _cpf;
         public string Cpf

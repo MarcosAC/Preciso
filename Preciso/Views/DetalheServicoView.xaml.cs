@@ -2,9 +2,9 @@
 
 namespace Preciso.Views
 {
-    public partial class ServicesDetailsPageView : ContentPage
+    public partial class DetalheServicoView : ContentPage
     {
-        public ServicesDetailsPageView()
+        public DetalheServicoView()
         {
             InitializeComponent();
         }
