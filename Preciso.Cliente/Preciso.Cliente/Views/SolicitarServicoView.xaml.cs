@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Preciso.Cliente.ViewModels;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Preciso.Cliente.Views
@@ -9,6 +10,8 @@ namespace Preciso.Cliente.Views
         public SolicitarServicoView()
         {
             InitializeComponent();
+
+            BindingContext = new SolicitarServicoViewModel();
         }
     }
 }

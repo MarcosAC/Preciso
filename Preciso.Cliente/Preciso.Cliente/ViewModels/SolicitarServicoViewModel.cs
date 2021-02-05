@@ -1,4 +1,5 @@
 ﻿using Helpers;
+using Helpers.Data;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -9,6 +10,8 @@ namespace Preciso.Cliente.ViewModels
 {
     public class SolicitarServicoViewModel : BaseViewModel
     {
+        private FirebaseStorageService firebaseStorageService;        
+
         private DateTime _dataSolicitacao;
         public DateTime DataSolicitacao 
         { 
@@ -43,8 +46,8 @@ namespace Preciso.Cliente.ViewModels
             set => SetProperty(ref _descricao, value);
         }
 
-        private byte[] _foto;
-        public byte[] Foto
+        private ImageSource _foto;
+        public ImageSource Foto
         { 
             get => _foto;
             set => SetProperty(ref _foto, value);
@@ -59,24 +62,27 @@ namespace Preciso.Cliente.ViewModels
 
         private Command _enviarSolicitacaoServicoCommand;
         public Command EnviarSolicitacaoServicoCommand =>
-            _enviarSolicitacaoServicoCommand ?? (_enviarSolicitacaoServicoCommand = new Command(async () => ExecuteEnviarSolicitacaoServicoCommand()));
+            _enviarSolicitacaoServicoCommand ?? (_enviarSolicitacaoServicoCommand = new Command(async () => await ExecuteEnviarSolicitacaoServicoCommand()));
 
         private async Task ExecuteEnviarSolicitacaoServicoCommand()
         {
-            //TODO - Fazer API e camada de DataBase.
+            var foto = await MediaPicker.CapturePhotoAsync();            
+            //var stream = CarregarFoto(/*foto*/);
+
+            //await firebaseStorageService.AdicionarFoto(stream, foto.FileName);
         }
 
         private Command _cancelarSolicitacaoServicoCommand;
         public Command CancelarSolicitacaoServicoCommand =>
-            _cancelarSolicitacaoServicoCommand ?? (_cancelarSolicitacaoServicoCommand = new Command(async () => ExecuteCancelarSolicitacaoServicoCommand()));
+            _cancelarSolicitacaoServicoCommand ?? (_cancelarSolicitacaoServicoCommand = new Command(async () => await ExecuteCancelarSolicitacaoServicoCommand()));
 
         private async Task ExecuteCancelarSolicitacaoServicoCommand()
         {
-            //TODO - Fazer API e camada de DataBase.
+            //TODO - Fazer API e camada de DataBase.            
         }
 
         private Command _adicionarFotoCommand;
-        public Command AdicionarTirarFotoCommand => 
+        public Command AdicionarFotoCommand => 
             _adicionarFotoCommand ?? (_adicionarFotoCommand = new Command(async () => await ExecuteAdicionarFotoCommand(), () => MediaPicker.IsCaptureSupported));
 
         private async Task ExecuteAdicionarFotoCommand()
@@ -103,6 +109,23 @@ namespace Preciso.Cliente.ViewModels
             using (var novoStream = File.OpenWrite(arquivoFoto))
             {
                 await stream.CopyToAsync(novoStream);
+                Foto = ImageSource.FromFile(arquivoFoto);
+            }
+        }
+
+        private void CarregarFoto(FileResult foto)
+        {
+            var arquivoFoto = Path.Combine(FileSystem.CacheDirectory/*, foto.FileName*/);
+
+            //using (var stream = foto.OpenReadAsync())
+            using (var novoStream = File.OpenWrite(arquivoFoto))
+            {
+                Foto = ImageSource.FromStream(() =>
+                {
+                    var streamFoto = File.Open(arquivoFoto, FileMode.Open);
+                    return streamFoto;
+                });
+                //return novoStream;
             }
         }
     }
