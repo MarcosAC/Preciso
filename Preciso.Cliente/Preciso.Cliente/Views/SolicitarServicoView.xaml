@@ -5,26 +5,30 @@
              Title="Solicitar Serviço">
     <ContentPage.Content>
         <ScrollView>
-            <Grid RowDefinitions="*,*,*,150,350,*,*" Padding="15">
+            <Grid RowDefinitions="*,*,*,150,*" Padding="15">
                 <Entry Grid.Row="0"
-					   Placeholder="Nome" />
+					   Placeholder="Nome"
+                       Text="{Binding NomeCliente}" />
                 <Entry Grid.Row="1"
-					   Placeholder="Contato" />
+					   Placeholder="Contato"
+                       Text="{Binding ContatoCliente}" />
                 <Entry Grid.Row="2"
-                       Placeholder="Tipo de Serviço" />
+                       Placeholder="Tipo de Serviço"
+                       Text="{Binding Titulo}"/>
 
                 <Editor Grid.Row="3"
                         Placeholder="Descrição do Serviço"
-                        HeightRequest="150" />
+                        HeightRequest="150"
+                        Text="{Binding Descricao}" />
 
-                <Image Grid.Row="4"
+                <!--<Image Grid.Row="4"
                        Source="{Binding Foto}" />
 
                 <Button Grid.Row="5"
                         Style="{StaticResource StyleButton}"
                         Text="Enviar Imagem do Serviço"
-                        Command="{Binding AdicionarFotoCommand}" />
-                <Button Grid.Row="6"
+                        Command="{Binding AdicionarFotoCommand}" />-->
+                <Button Grid.Row="4"
                         Style="{StaticResource StyleButton}"
                         Text="Solicitar Serviço"
                         Command="{Binding EnviarSolicitacaoServicoCommand}" />

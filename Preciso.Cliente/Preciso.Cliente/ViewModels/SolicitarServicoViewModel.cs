@@ -1,16 +1,18 @@
 ﻿using Helpers;
-using Helpers.Data;
+using Preciso.Cliente.Data;
+using Preciso.Cliente.Models;
 using System;
-using System.IO;
 using System.Threading.Tasks;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Preciso.Cliente.ViewModels
 {
     public class SolicitarServicoViewModel : BaseViewModel
     {
-        private FirebaseStorageService firebaseStorageService;        
+        //FirebaseStorageService firebaseStorageService = new FirebaseStorageService();
+        //private FileResult foto;
+
+        private readonly FirebaseService firebase;        
 
         private DateTime _dataSolicitacao;
         public DateTime DataSolicitacao 
@@ -18,18 +20,18 @@ namespace Preciso.Cliente.ViewModels
             get => _dataSolicitacao;
             set => SetProperty(ref _dataSolicitacao, value);
         }
-        private string _nome;
-        public string Nome
+        private string _nomeCliente;
+        public string NomeCliente
         { 
-            get => _nome; 
-            set => SetProperty(ref _nome, value);
+            get => _nomeCliente; 
+            set => SetProperty(ref _nomeCliente, value);
         }
 
-        private string _contato;
-        public string Contato 
+        private string _contatoCliente;
+        public string ContatoCliente
         { 
-            get => _contato;
-            set => SetProperty(ref _contato, value);
+            get => _contatoCliente;
+            set => SetProperty(ref _contatoCliente, value);
         }
 
         private string _titulo;
@@ -60,16 +62,44 @@ namespace Preciso.Cliente.ViewModels
             set => SetProperty(ref _caminhoFoto, value);
         }
 
+        public SolicitarServicoViewModel()
+        {
+            firebase = new FirebaseService();
+        }
+
         private Command _enviarSolicitacaoServicoCommand;
         public Command EnviarSolicitacaoServicoCommand =>
             _enviarSolicitacaoServicoCommand ?? (_enviarSolicitacaoServicoCommand = new Command(async () => await ExecuteEnviarSolicitacaoServicoCommand()));
 
         private async Task ExecuteEnviarSolicitacaoServicoCommand()
         {
-            var foto = await MediaPicker.CapturePhotoAsync();            
-            //var stream = CarregarFoto(/*foto*/);
+            //if (foto == null)
+            //{
+            //    await App.Current.MainPage.DisplayAlert("", "Erro", "Ok");
+            //}
+            //else
+            //{
+            //    var stream = await foto.OpenReadAsync();
+            //    await firebaseStorageService.AdicionarFoto(stream, foto.FileName);
+            //}
 
-            //await firebaseStorageService.AdicionarFoto(stream, foto.FileName);
+            var servico = new Servico
+            {
+                NomeCliente = NomeCliente,
+                ContatoCliente = ContatoCliente,
+                Titulo = Titulo,
+                Descricao = Descricao
+            };
+
+            if (servico == null)
+            {
+                await App.Current.MainPage.DisplayAlert("Cadastrar Servico", "Erro ao cadastrar servico", "Ok");
+            }
+            else
+            {
+                await firebase.SolicitarServico(servico);
+                await App.Current.MainPage.DisplayAlert("Cadastrar Servico", "Sucesso ao cadastrar servico", "Ok");
+            }
         }
 
         private Command _cancelarSolicitacaoServicoCommand;
@@ -81,52 +111,54 @@ namespace Preciso.Cliente.ViewModels
             //TODO - Fazer API e camada de DataBase.            
         }
 
-        private Command _adicionarFotoCommand;
-        public Command AdicionarFotoCommand => 
-            _adicionarFotoCommand ?? (_adicionarFotoCommand = new Command(async () => await ExecuteAdicionarFotoCommand(), () => MediaPicker.IsCaptureSupported));
+        #region Funções de Inserir Foto
+        //private Command _adicionarFotoCommand;
+        //public Command AdicionarFotoCommand => 
+        //    _adicionarFotoCommand ?? (_adicionarFotoCommand = new Command(async () => await ExecuteAdicionarFotoCommand(), () => MediaPicker.IsCaptureSupported));
 
-        private async Task ExecuteAdicionarFotoCommand()
-        {
-            if (!await App.Current.MainPage.DisplayAlert("Adicionar Imagem ou Foto",
-                                                         "Deseja adicionar uma imagem do arquivo ou tirar uma foto?",
-                                                         "Adicionar Foto do Arquivo", "Tirar Foto"))
-            {
-                var foto = await MediaPicker.CapturePhotoAsync();
-                await CarregarFotoAsync(foto);
-            }
-            else
-            {
-                var foto = await MediaPicker.PickPhotoAsync();
-                await CarregarFotoAsync(foto);
-            }
-        }
+        //private async Task ExecuteAdicionarFotoCommand()
+        //{
+        //    if (!await App.Current.MainPage.DisplayAlert("Adicionar Imagem ou Foto",
+        //                                                 "Deseja adicionar uma imagem do arquivo ou tirar uma foto?",
+        //                                                 "Adicionar Foto do Arquivo", "Tirar Foto"))
+        //    {
+        //        foto = await MediaPicker.CapturePhotoAsync();
+        //        await CarregarFotoAsync(foto);
+        //    }
+        //    else
+        //    {
+        //        foto = await MediaPicker.PickPhotoAsync();
+        //        await CarregarFotoAsync(foto);
+        //    }
+        //}
 
-        private async Task CarregarFotoAsync(FileResult foto)
-        {
-            var arquivoFoto = Path.Combine(FileSystem.CacheDirectory, foto.FileName);
+        //private async Task CarregarFotoAsync(FileResult foto)
+        //{
+        //    var arquivoFoto = Path.Combine(FileSystem.CacheDirectory, foto.FileName);
 
-            using (var stream = await foto.OpenReadAsync())
-            using (var novoStream = File.OpenWrite(arquivoFoto))
-            {
-                await stream.CopyToAsync(novoStream);
-                Foto = ImageSource.FromFile(arquivoFoto);
-            }
-        }
+        //    using (var stream = await foto.OpenReadAsync())
+        //    using (var novoStream = File.OpenWrite(arquivoFoto))
+        //    {
+        //        await stream.CopyToAsync(novoStream);
+        //        Foto = ImageSource.FromFile(arquivoFoto);
+        //    }
+        //}
 
-        private void CarregarFoto(FileResult foto)
-        {
-            var arquivoFoto = Path.Combine(FileSystem.CacheDirectory/*, foto.FileName*/);
+        //private void CarregarFoto(FileResult foto)
+        //{
+        //    var arquivoFoto = Path.Combine(FileSystem.CacheDirectory/*, foto.FileName*/);
 
-            //using (var stream = foto.OpenReadAsync())
-            using (var novoStream = File.OpenWrite(arquivoFoto))
-            {
-                Foto = ImageSource.FromStream(() =>
-                {
-                    var streamFoto = File.Open(arquivoFoto, FileMode.Open);
-                    return streamFoto;
-                });
-                //return novoStream;
-            }
-        }
+        //    //using (var stream = foto.OpenReadAsync())
+        //    using (var novoStream = File.OpenWrite(arquivoFoto))
+        //    {
+        //        Foto = ImageSource.FromStream(() =>
+        //        {
+        //            var streamFoto = File.Open(arquivoFoto, FileMode.Open);
+        //            return streamFoto;
+        //        });
+        //        //return novoStream;
+        //    }
+        //}
+        #endregion
     }
 }
