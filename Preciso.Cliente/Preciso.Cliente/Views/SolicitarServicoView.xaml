@@ -5,7 +5,7 @@
              Title="Solicitar Serviço">
     <ContentPage.Content>
         <ScrollView>
-            <Grid RowDefinitions="*,*,*,150,*" Padding="15">
+            <Grid RowDefinitions="*,*,*,250,*" Padding="15">
                 <Entry Grid.Row="0"
 					   Placeholder="Nome"
                        Text="{Binding NomeCliente}" />
