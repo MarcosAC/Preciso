@@ -52,9 +52,16 @@ namespace Preciso.ViewModels
             set => SetProperty(ref _formaPagamento, value);
         }
 
-        private TipoProfissional _tipoProfissional;
-        public TipoProfissional TipoProfissional 
-        { 
+        //private TipoProfissional _tipoProfissional;
+        //public TipoProfissional TipoProfissional 
+        //{ 
+        //    get => _tipoProfissional;
+        //    set => SetProperty(ref _tipoProfissional, value);
+        //}
+
+        private string _tipoProfissional;
+        public string TipoProfissional
+        {
             get => _tipoProfissional;
             set => SetProperty(ref _tipoProfissional, value);
         }

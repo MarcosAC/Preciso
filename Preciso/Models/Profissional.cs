@@ -11,7 +11,8 @@ namespace Preciso.Models
         public string Email { get; set; }
         public string Endereco { get; set; }
         public string FormaPagamento { get; set; }
-        public TipoProfissional TipoProfissional { get; set; }
+        //public TipoProfissional TipoProfissional { get; set; }
+        public string TipoProfissional { get; set; }
         public bool Ativo { get; set; }
         public DateTime DataAtivacao { get; set; }
         public DateTime DataDesativado { get; set; }

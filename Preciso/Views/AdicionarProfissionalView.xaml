@@ -42,7 +42,8 @@
 
                 <Picker Grid.Row="7" 
                         Style="{StaticResource StyleEntry}"
-                        Title="Tipo Profissional">
+                        Title="Tipo Profissional"
+                        SelectedItem="{Binding TipoProfissional}">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Eletricista</x:String>
