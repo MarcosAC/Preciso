@@ -1,6 +1,7 @@
 ﻿using Firebase.Database;
 using Firebase.Database.Query;
 using Preciso.Models;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,7 +11,15 @@ namespace Preciso.Data
     {
         FirebaseClient firebase = new FirebaseClient("https://presicoapp-default-rtdb.firebaseio.com/");
 
-        public async Task CadastrarProfissional(Profissional profissional) => await firebase.Child("Profissionais").PostAsync<Profissional>(profissional);
+        public ObservableCollection<Servico> Servicos { get; set; }
+
+        public FirebaseService()
+        {
+            Servicos = ListaServicos();
+        }
+
+        public async Task CadastrarProfissional(Profissional profissional) => 
+            await firebase.Child("Profissionais").PostAsync<Profissional>(profissional);        
 
         public async Task DeletarProfissional(int id)
         {
@@ -24,6 +33,14 @@ namespace Preciso.Data
                 .Child("Profissionais")
                 .Child(deletarServico.Key)
                 .DeleteAsync();
+        }
+
+        public ObservableCollection<Servico> ListaServicos()
+        {
+            return firebase
+                   .Child("Servicos")
+                   .AsObservable<Servico>()
+                   .AsObservableCollection();
         }
     }
 }

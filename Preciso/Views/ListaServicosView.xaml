@@ -4,172 +4,33 @@
              x:Class="Preciso.Views.ListaServicosView"
              Title="Lista de Serviços">
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Padding="15">
-                <Frame BorderColor="White"
-                   CornerRadius="5"
-                   Padding="15"
-                   Margin="0,0,0,10"
-                   HasShadow="True">
+        <ListView x:Name="ListaServicos"
+                  ItemsSource="{Binding Servicos}"
+                  SelectedItem="{Binding ServicoSelecionado, Mode=TwoWay}"                          
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Frame BorderColor="White"
+                                   CornerRadius="5"
+                                   Padding="15"
+                                   Margin="0,0,0,10"
+                                   HasShadow="True">
 
-                    <StackLayout>
-                        <Label Text="Troca de chuveiro"
-                               FontSize="Medium"
-                               FontAttributes="Bold" />
+                                <StackLayout>
+                                    <Label Text="{Binding Titulo}"
+                                           FontSize="Medium"
+                                           FontAttributes="Bold" />
 
-                        <Label Text="Preciso de troca de..."
-                               FontSize="Small" />
-                    </StackLayout>
-                </Frame>
-
-                <Frame BorderColor="White"
-                   CornerRadius="5"
-                   Padding="15"
-                   Margin="0,0,0,10"
-                   HasShadow="True">
-
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped" />
-                    </Frame.GestureRecognizers>
-
-                    <StackLayout>
-                        <Label Text="Troca de chuveiro"
-                               FontSize="Medium"
-                               FontAttributes="Bold" />
-
-                        <Label Text="Preciso de troca de..."
-                               FontSize="Small" />
-                    </StackLayout>
-                </Frame>
-
-                <Frame BorderColor="White"
-                   CornerRadius="5"
-                   Padding="15"
-                   Margin="0,0,0,10"
-                   HasShadow="True">
-
-                    <StackLayout>
-                        <Label Text="Troca de chuveiro"
-                               FontSize="Medium"
-                               FontAttributes="Bold" />
-
-                        <Label Text="Preciso de troca de..."
-                               FontSize="Small" />
-                    </StackLayout>
-                </Frame>
-
-                <Frame BorderColor="White"
-                   CornerRadius="5"
-                   Padding="15"
-                   Margin="0,0,0,10"
-                   HasShadow="True">
-
-                    <StackLayout>
-                        <Label Text="Troca de chuveiro"
-                               FontSize="Medium"
-                               FontAttributes="Bold" />
-
-                        <Label Text="Preciso de troca de..."
-                               FontSize="Small" />
-                    </StackLayout>
-                </Frame>
-
-                <Frame BorderColor="White"
-                   CornerRadius="5"
-                   Padding="15"
-                   Margin="0,0,0,10"
-                   HasShadow="True">
-
-                    <StackLayout>
-                        <Label Text="Troca de chuveiro"
-                               FontSize="Medium"
-                               FontAttributes="Bold" />
-
-                        <Label Text="Preciso de troca de..."
-                               FontSize="Small" />
-                    </StackLayout>
-                </Frame>
-
-                <Frame BorderColor="White"
-                   CornerRadius="5"
-                   Padding="15"
-                   Margin="0,0,0,10"
-                   HasShadow="True">
-
-                    <StackLayout>
-                        <Label Text="Troca de chuveiro"
-                               FontSize="Medium"
-                               FontAttributes="Bold" />
-
-                        <Label Text="Preciso de troca de..."
-                               FontSize="Small" />
-                    </StackLayout>
-                </Frame>
-
-                <Frame BorderColor="White"
-                   CornerRadius="5"
-                   Padding="15"
-                   Margin="0,0,0,10"
-                   HasShadow="True">
-
-                    <StackLayout>
-                        <Label Text="Troca de chuveiro"
-                               FontSize="Medium"
-                               FontAttributes="Bold" />
-
-                        <Label Text="Preciso de troca de..."
-                               FontSize="Small" />
-                    </StackLayout>
-                </Frame>
-
-                <Frame BorderColor="White"
-                   CornerRadius="5"
-                   Padding="15"
-                   Margin="0,0,0,10"
-                   HasShadow="True">
-
-                    <StackLayout>
-                        <Label Text="Troca de chuveiro"
-                               FontSize="Medium"
-                               FontAttributes="Bold" />
-
-                        <Label Text="Preciso de troca de..."
-                               FontSize="Small" />
-                    </StackLayout>
-                </Frame>
-
-                <Frame BorderColor="White"
-                   CornerRadius="5"
-                   Padding="15"
-                   Margin="0,0,0,10"
-                   HasShadow="True">
-
-                    <StackLayout>
-                        <Label Text="Troca de chuveiro"
-                               FontSize="Medium"
-                               FontAttributes="Bold" />
-
-                        <Label Text="Preciso de troca de..."
-                               FontSize="Small" />
-                    </StackLayout>
-                </Frame>
-
-                <Frame BorderColor="White"
-                   CornerRadius="5"
-                   Padding="15"
-                   Margin="0,0,0,10"
-                   HasShadow="True">
-
-                    <StackLayout>
-                        <Label Text="Troca de chuveiro"
-                               FontSize="Medium"
-                               FontAttributes="Bold" />
-
-                        <Label Text="Preciso de troca de..."
-                               FontSize="Small" />
-                    </StackLayout>
-                </Frame>
-            </StackLayout>
-        </ScrollView>       
+                                    <Label Text="{Binding Descricao}"
+                                            FontSize="Small" />
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>    
