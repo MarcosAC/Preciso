@@ -123,6 +123,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="FirebaseDatabase.net">
+      <Version>4.0.5</Version>
+    </PackageReference>
     <PackageReference Include="FirebaseStorage.net">
       <Version>1.0.3</Version>
     </PackageReference>
@@ -131,9 +134,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Preciso\Preciso.Profissional.csproj">
+    <ProjectReference Include="..\Preciso\Preciso.csproj">
       <Project>{D23D0413-8D03-4A02-B3E8-551CAC884DF5}</Project>
-      <Name>Preciso.Profissional</Name>
+      <Name>Preciso</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

@@ -4,11 +4,44 @@
              x:Class="Preciso.Views.AdicionarProfissionalView">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="15">
-                <Entry Style="{StaticResource StyleEntry}"
-					   Placeholder="Nome" />
+            <Grid RowDefinitions="*,*,*,*,*,*,*,*,*,*" Padding="15">
+                <Entry Grid.Row="0"
+                       Style="{StaticResource StyleEntry}"
+					   Placeholder="Nome" 
+                       Text="{Binding Nome}" />
 
-                <Picker Style="{StaticResource StyleEntry}"
+                <Entry Grid.Row="1"
+                       Style="{StaticResource StyleEntry}"
+					   Placeholder="CPF"
+                       Text="{Binding Cpf}" />
+
+                <Entry Grid.Row="2"
+                       Style="{StaticResource StyleEntry}"
+					   Placeholder="Celular"
+                       Text="{Binding Celular}" />
+
+                <Entry Grid.Row="3"
+                       Style="{StaticResource StyleEntry}"
+					   Placeholder="Email"
+                       Text="{Binding Email}" />
+
+                <Entry Grid.Row="4"
+                       Style="{StaticResource StyleEntry}"
+					   Placeholder="Endereco"
+                       Text="{Binding Endereco}" />
+
+                <Entry Grid.Row="5"
+                       Style="{StaticResource StyleEntry}"
+					   Placeholder="FormaPagamento"
+                       Text="{Binding FormaPagamento}" />
+
+                <Entry Grid.Row="6"
+                       Style="{StaticResource StyleEntry}"
+					   Placeholder="DataAtivacao"
+                       Text="{Binding DataAtivacao}" />
+
+                <Picker Grid.Row="7" 
+                        Style="{StaticResource StyleEntry}"
                         Title="Tipo Profissional">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
@@ -18,11 +51,14 @@
                     </Picker.ItemsSource>
                 </Picker>
 
-                <Button	Style="{StaticResource StyleButton}"
-                        Text="Cadastrar"/>
-                <Button Style="{StaticResource StyleButton}"
+                <Button	Grid.Row="8"
+                        Style="{StaticResource StyleButton}"
+                        Text="Cadastrar" 
+                        Command="{Binding SalvarDadosProfiossionalCommand}" />
+                <Button Grid.Row="9"
+                        Style="{StaticResource StyleButton}"
                         Text="Cancelar" />
-            </StackLayout>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Preciso.ViewModels;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Preciso.Views
@@ -9,6 +10,8 @@ namespace Preciso.Views
         public AdicionarProfissionalView()
         {
             InitializeComponent();
+
+            BindingContext = new AdicionarProfissionalViewModel();
         }
     }
 }

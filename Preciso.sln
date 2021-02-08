@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preciso.Profissional.Android", "Preciso.Android\Preciso.Profissional.Android.csproj", "{C2FCA0F5-F53D-4B42-AA9D-F6498291753B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preciso.Android", "Preciso.Android\Preciso.Android.csproj", "{C2FCA0F5-F53D-4B42-AA9D-F6498291753B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preciso.Profissional.iOS", "Preciso.iOS\Preciso.Profissional.iOS.csproj", "{70080D42-9B43-427C-A77E-016422A77AF5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preciso.iOS", "Preciso.iOS\Preciso.iOS.csproj", "{70080D42-9B43-427C-A77E-016422A77AF5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Preciso.Profissional", "Preciso\Preciso.Profissional.csproj", "{D23D0413-8D03-4A02-B3E8-551CAC884DF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Preciso", "Preciso\Preciso.csproj", "{D23D0413-8D03-4A02-B3E8-551CAC884DF5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preciso.Cliente.Android", "Preciso.Cliente\Preciso.Cliente.Android\Preciso.Cliente.Android.csproj", "{1863CA8D-32B4-4CA6-9A03-3446D95B0CEB}"
 EndProject
@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Preciso.Cliente", "Preciso.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{EC18B3DB-7837-43F2-A989-0F1C878B4E0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{390C55FC-1B1C-4E47-963E-64EC0D15DD04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers", "Helpers\Helpers.csproj", "{390C55FC-1B1C-4E47-963E-64EC0D15DD04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

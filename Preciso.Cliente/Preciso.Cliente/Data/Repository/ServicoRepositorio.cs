@@ -10,7 +10,7 @@ namespace Preciso.Cliente.Data.Repository
 {
     public class ServicoRepositorio : IRepository
     {
-        FirebaseStorageService firebaseStorageService;
+        //FirebaseStorageService firebaseStorageService;
 
         public void AdicionarServico(Stream streamFoto, string nomeFoto)
         {

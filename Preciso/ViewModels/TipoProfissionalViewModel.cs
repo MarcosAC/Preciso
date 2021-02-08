@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
-namespace Preciso.Profissional.ViewModels
+namespace Preciso.ViewModels
 {
     public class TipoProfissionalViewModel : BaseViewModel
     {

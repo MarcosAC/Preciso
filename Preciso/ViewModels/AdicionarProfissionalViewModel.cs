@@ -1,12 +1,15 @@
-﻿using Preciso.Models;
+﻿using Preciso.Data;
+using Preciso.Models;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace Preciso.Profissional.ViewModels
+namespace Preciso.ViewModels
 {
     public class AdicionarProfissionalViewModel : BaseViewModel
     {
+        private readonly FirebaseService firebase;
+
         private string _cpf;
         public string Cpf
         {
@@ -77,13 +80,38 @@ namespace Preciso.Profissional.ViewModels
             set => SetProperty(ref _dataDesativado, value);
         }
 
+        public AdicionarProfissionalViewModel()
+        {
+            firebase = new FirebaseService();
+        }
+
         private Command _salvarDadosProfissionalCommand;
         public Command SalvarDadosProfiossionalCommand =>
             _salvarDadosProfissionalCommand ?? (_salvarDadosProfissionalCommand = new Command(async () => ExecuteSalvarDadosProfissionaisCommand()));
 
         private async Task ExecuteSalvarDadosProfissionaisCommand()
         {
-            //TODO - Fazer API e camada de DataBase.
+            var profissioanal = new Profissional
+            {
+                Cpf = Cpf,
+                Nome = Nome,
+                Celular = Celular,
+                Email = Email,
+                Endereco = Endereco,
+                FormaPagamento = FormaPagamento,
+                TipoProfissional = TipoProfissional,
+                DataAtivacao = DataAtivacao
+            };
+
+            if (profissioanal == null)
+            {
+                await App.Current.MainPage.DisplayAlert("Cadastrar Profissional", "Erro ao cadastrar profissional", "Ok");
+            }
+            else
+            {
+                await firebase.CadastrarProfissional(profissioanal);
+                await App.Current.MainPage.DisplayAlert("Cadastrar Servico", "Sucesso ao cadastrar servico", "Ok");
+            }
         }
 
         private Command _editarDadosProfissionalCommand;
