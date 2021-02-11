@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Helpers.Controls;assembly=Helpers"
              x:Class="Preciso.Views.ListaServicosView"
              Title="Lista de Serviços">
     <ContentPage.Content>
@@ -11,23 +12,11 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout>
-                            <Frame BorderColor="White"
-                                   CornerRadius="5"
-                                   Padding="15"
-                                   Margin="0,0,0,10"
-                                   HasShadow="True">
-
-                                <StackLayout>
-                                    <Label Text="{Binding Titulo}"
-                                           FontSize="Medium"
-                                           FontAttributes="Bold" />
-
-                                    <Label Text="{Binding Descricao}"
-                                            FontSize="Small" />
-                                </StackLayout>
-                            </Frame>
-                        </StackLayout>
+                        <StackLayout Padding="15">
+                            <controls:CardView BorderColor="DarkGray" 
+                                               CardTitle="{Binding Titulo}" 
+                                               CardDescription="{Binding Descricao}" />
+                        </StackLayout>                        
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

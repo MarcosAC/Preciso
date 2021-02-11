@@ -2,7 +2,7 @@
 using Firebase.Database.Query;
 using System.Threading.Tasks;
 
-namespace Helpers.Data
+namespace Preciso.Data
 {
     public class FirebaseService
     {

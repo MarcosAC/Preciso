@@ -1,5 +1,5 @@
-﻿using Helpers.Data;
-using Helpers.Data.Repository;
+﻿using Preciso.Data;
+using Preciso.Data.Repository;
 using System;
 using System.Collections.Generic;
 using System.IO;
