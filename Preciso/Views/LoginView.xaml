@@ -18,11 +18,19 @@
                 <Button Style="{StaticResource StyleButton}"
                         Text="Cancelar" />
 
+                <Label Text="Criar Conta"
+                       FontSize="Subtitle" 
+                       HorizontalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTapCriarConta" />
+                    </Label.GestureRecognizers>
+                </Label>
+
                 <Label Text="Esqueci minha senha."
                        FontSize="Subtitle" 
                        HorizontalTextAlignment="Center">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped" />
+                        <TapGestureRecognizer Tapped="OnTapEsqueciSenha" />
                     </Label.GestureRecognizers>
                 </Label>
             </StackLayout>

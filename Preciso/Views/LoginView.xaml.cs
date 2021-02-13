@@ -11,9 +11,14 @@ namespace Preciso.Views
             InitializeComponent();
         }
 
-        private void OnTapGestureRecognizerTapped(object sender, System.EventArgs e)
+        private void OnTapEsqueciSenha(object sender, System.EventArgs e)
         {
 
+        }
+
+        private void OnTapCriarConta(object sender, System.EventArgs e)
+        {
+            App.Current.MainPage.Navigation.PushAsync(new AdicionarProfissionalView());
         }
     }
 }

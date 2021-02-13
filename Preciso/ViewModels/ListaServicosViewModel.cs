@@ -6,13 +6,13 @@ namespace Preciso.ViewModels
 {
     public class ListaServicosViewModel : BaseViewModel
     {
-        private readonly FirebaseService firebase;
+        private readonly FirebasePrecisoService firebase;
 
         public ObservableCollection<Servico> Servicos { get; set; }
 
         public ListaServicosViewModel()
         {
-            firebase = new FirebaseService();
+            firebase = new FirebasePrecisoService();
             Servicos = CarregarServicos();            
         }
 

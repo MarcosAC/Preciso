@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace Preciso.Data
 {
-    public class FirebaseService
+    public class FirebasePrecisoService
     {
         FirebaseClient firebase = new FirebaseClient("https://presicoapp-default-rtdb.firebaseio.com/");
 
         public ObservableCollection<Servico> Servicos { get; set; }
 
-        public FirebaseService()
+        public FirebasePrecisoService()
         {
             Servicos = ListaServicos();
         }
 
         public async Task CadastrarProfissional(Profissional profissional) => 
-            await firebase.Child("Profissionais").PostAsync<Profissional>(profissional);        
+            await firebase.Child("Profissionais").PostAsync(profissional);
 
         public async Task DeletarProfissional(int id)
         {
