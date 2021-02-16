@@ -94,7 +94,7 @@ namespace Preciso.ViewModels
 
         private Command _salvarDadosProfissionalCommand;
         public Command SalvarDadosProfiossionalCommand =>
-            _salvarDadosProfissionalCommand ?? (_salvarDadosProfissionalCommand = new Command(async () => ExecuteSalvarDadosProfissionaisCommand()));
+            _salvarDadosProfissionalCommand ?? (_salvarDadosProfissionalCommand = new Command(async () => await ExecuteSalvarDadosProfissionaisCommand()));
 
         private async Task ExecuteSalvarDadosProfissionaisCommand()
         {            
@@ -129,6 +129,6 @@ namespace Preciso.ViewModels
         private async Task ExecuteEditarDadosProfissionalCommand()
         {
             //TODO - Fazer API e camada de DataBase.
-        }
+        }        
     }
 }

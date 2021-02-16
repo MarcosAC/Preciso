@@ -1,14 +1,15 @@
-﻿using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Preciso.ViewModels;
+using Xamarin.Forms;
 
 namespace Preciso.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginView : ContentPage
     {
         public LoginView()
         {
             InitializeComponent();
+
+            BindingContext = new LoginViewModel();
         }
 
         private void OnTapEsqueciSenha(object sender, System.EventArgs e)
