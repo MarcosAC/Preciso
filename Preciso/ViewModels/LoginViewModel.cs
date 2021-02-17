@@ -1,7 +1,5 @@
 ﻿using Preciso.Data;
-using Preciso.Models;
 using Preciso.Views;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -47,10 +45,10 @@ namespace Preciso.ViewModels
                 return;
             }
 
-            if (loginProfissional.Email == Email && loginProfissional.Senha == Senha)
+            if (loginProfissional.Senha == Senha )
                 await App.Current.MainPage.Navigation.PushAsync(new ListaServicosView());
             else
-                await App.Current.MainPage.DisplayAlert("Erro", "Senha incorreta", "Ok");
+                await App.Current.MainPage.DisplayAlert("Erro", "Senha incorreta", "Ok"); 
         } 
     }
 }
