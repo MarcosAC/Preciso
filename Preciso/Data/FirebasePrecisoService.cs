@@ -13,12 +13,10 @@ namespace Preciso.Data
         FirebaseClient firebase = new FirebaseClient("https://presicoapp-default-rtdb.firebaseio.com/");
 
         public ObservableCollection<Servico> Servicos { get; set; }
-        //public ObservableCollection<Profissional> Profissionais { get; set; }
 
         public FirebasePrecisoService()
         {
             Servicos = ListaServicos();
-            //Profissionais = ListaProfissionais();
         }
 
         public async Task CadastrarProfissional(Profissional profissional) => 
@@ -38,6 +36,16 @@ namespace Preciso.Data
                 .DeleteAsync();
         }
 
+        public async Task<Servico> ObterServico(int id)
+        {
+            var servicos = ListaServicos();
+
+            await firebase
+              .Child("Servicos")
+              .OnceAsync<Servico>();
+            return servicos.Where(servico => servico.Id == id).FirstOrDefault();
+        }
+
         public ObservableCollection<Servico> ListaServicos()
         {
             return firebase
@@ -45,14 +53,6 @@ namespace Preciso.Data
                    .AsObservable<Servico>()
                    .AsObservableCollection();
         }
-
-        //public ObservableCollection<Profissional> ListaProfissionais()
-        //{
-        //    return firebase
-        //           .Child("Profissionais")
-        //           .AsObservable<Profissional>()
-        //           .AsObservableCollection();
-        //}
 
         public async Task<List<Profissional>> ListaProfissionais()
         {

@@ -5,7 +5,7 @@ namespace Preciso.Cliente.Models
 {
     public class Servico
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public DateTime DataSolicitacao { get; set; }
         public string NomeCliente { get; set; }
         public string ContatoCliente { get; set; }

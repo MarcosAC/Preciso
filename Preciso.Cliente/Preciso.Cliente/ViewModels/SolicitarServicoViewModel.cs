@@ -85,6 +85,7 @@ namespace Preciso.Cliente.ViewModels
 
             var servico = new Servico
             {
+                Id = new Guid().ToString(),
                 NomeCliente = NomeCliente,
                 ContatoCliente = ContatoCliente,
                 Titulo = Titulo,

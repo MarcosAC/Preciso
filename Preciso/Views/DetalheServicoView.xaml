@@ -5,13 +5,16 @@
              Title="Detalhes do Serviço">
     <ContentPage.Content>
         <ScrollView>
-            <Grid RowDefinitions="*,*,*,150,300,*,*" Padding="15">
+            <Grid RowDefinitions="*,*,*,150,*,*" Padding="15">
                 <Entry Grid.Row="0"
-					   Placeholder="Nome" />
+					   Placeholder="Nome"
+                       IsEnabled="False" />
                 <Entry Grid.Row="1"
-					   Placeholder="Contato" />
+					   Placeholder="Contato"
+                       IsEnabled="False" />
                 <Entry Grid.Row="2"
-                       Placeholder="Tipo de Serviço" />
+                       Placeholder="Tipo de Serviço"
+                       IsEnabled="False" />
                 
                 <Editor Grid.Row="3"
                         IsEnabled="False"
@@ -19,13 +22,13 @@
                         HeightRequest="150"
                         Text="Aqui vai a descrição do serviço solicitado!!!" />
                 
-                <Image Grid.Row="4"
-                       HeightRequest="300" />
+                <!--<Image Grid.Row="4"
+                       HeightRequest="300" />-->
 
-                <Button Grid.Row="5"
+                <Button Grid.Row="4"
 					Style="{StaticResource StyleButton}"
 					Text="Aceitar"/>
-                <Button Grid.Row="6"
+                <Button Grid.Row="5"
 					Style="{StaticResource StyleButton}"
 					Text="Voltar" />
             </Grid>
