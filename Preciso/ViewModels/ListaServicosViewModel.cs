@@ -1,6 +1,10 @@
 ﻿using Preciso.Data;
 using Preciso.Models;
+using Preciso.Views;
+using System;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace Preciso.ViewModels
 {
@@ -19,6 +23,18 @@ namespace Preciso.ViewModels
         private ObservableCollection<Servico> CarregarServicos()
         {
             return firebase.ListaServicos();
+        }
+
+        private Command _selecionarServicoCommand;
+        public Command SelecionarServicoCommand =>
+            _selecionarServicoCommand ?? (_selecionarServicoCommand = new Command<Servico>(async servico => await ExecuteSelecionarServicoCommand(servico)));
+
+        private async Task ExecuteSelecionarServicoCommand(Servico servicoSelecionado)
+        {
+            if (servicoSelecionado == null)
+                return;
+
+            await App.Current.MainPage.Navigation.PushModalAsync(new NavigationPage(new DetalheServicoView(servicoSelecionado)));
         }
     }
 }

@@ -10,6 +10,12 @@ namespace Preciso.ViewModels
         private ObservableCollection<Servico> _servicos;
         public Servico _servicoSelecionado;
 
+        public DetalhesServicoViewModel(Servico servicoSelecionado)
+        {
+            _servicoSelecionado = servicoSelecionado;
+            //ListaServicos();
+        }
+
         public string Titulo
         {
             get { return _servicoSelecionado.Titulo; }
@@ -58,23 +64,18 @@ namespace Preciso.ViewModels
                 _servicoSelecionado.Descricao = value;
                 OnPropertyChanged();
             }
-        }
+        }        
 
-        public ObservableCollection<Servico> Servicos
-        { 
-            get => _servicos;
-            set => SetProperty(ref _servicos, value);
-        }
-        
-        public DetalhesServicoViewModel(Servico servicoSelecionado)
-        {
-            ListaServicos();
-        }
+        //public ObservableCollection<Servico> Servicos
+        //{ 
+        //    get => _servicos;
+        //    set => SetProperty(ref _servicos, value);
+        //}
 
-        public async Task<ObservableCollection<Servico>> ListaServicos()
-        {
-            //TODO - Fazer API e camada de DataBase.
-            return Servicos;
-        }
+        //public async Task<ObservableCollection<Servico>> ListaServicos()
+        //{
+        //    //TODO - Fazer API e camada de DataBase.
+        //    return Servicos;
+        //}
     }
 }

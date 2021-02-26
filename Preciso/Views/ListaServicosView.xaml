@@ -7,6 +7,7 @@
     <ContentPage.Content>
         <ListView x:Name="ListaServicos"
                   ItemsSource="{Binding Servicos}"
+                  ItemSelected="OnItemSelect"
                   SelectedItem="{Binding ServicoSelecionado, Mode=TwoWay}"                          
                   HasUnevenRows="True">
             <ListView.ItemTemplate>

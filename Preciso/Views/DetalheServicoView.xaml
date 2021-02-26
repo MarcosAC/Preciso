@@ -7,9 +7,11 @@
         <ScrollView>
             <Grid RowDefinitions="*,*,*,150,*,*" Padding="15">
                 <Entry Grid.Row="0"
+                       Text="{Binding NomeCliente}"
 					   Placeholder="Nome"
                        IsEnabled="False" />
                 <Entry Grid.Row="1"
+                       Text="{Binding ContatoCliente}"
 					   Placeholder="Contato"
                        IsEnabled="False" />
                 <Entry Grid.Row="2"
@@ -17,10 +19,10 @@
                        IsEnabled="False" />
                 
                 <Editor Grid.Row="3"
+                        Text="{Binding Descricao}"
                         IsEnabled="False"
                         Placeholder="Descrição do Serviço"
-                        HeightRequest="150"
-                        Text="Aqui vai a descrição do serviço solicitado!!!" />
+                        HeightRequest="150" />
                 
                 <!--<Image Grid.Row="4"
                        HeightRequest="300" />-->
