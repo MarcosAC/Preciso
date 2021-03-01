@@ -1,5 +1,4 @@
-﻿using Preciso;
-using Preciso.Cliente.Data;
+﻿using Preciso.Cliente.Data;
 using Preciso.Cliente.Models;
 using System;
 using System.Threading.Tasks;
@@ -85,21 +84,20 @@ namespace Preciso.Cliente.ViewModels
 
             var servico = new Servico
             {
-                Id = new Guid().ToString(),
                 NomeCliente = NomeCliente,
                 ContatoCliente = ContatoCliente,
                 Titulo = Titulo,
                 Descricao = Descricao
             };
 
-            if (servico == null)
+            if (servico != null)
             {
-                await App.Current.MainPage.DisplayAlert("Cadastrar Servico", "Erro ao cadastrar servico", "Ok");
+                await firebase.SolicitarServico(servico);
+                await App.Current.MainPage.DisplayAlert("Cadastrar Servico", "Sucesso ao cadastrar servico", "Ok");                
             }
             else
             {
-                await firebase.SolicitarServico(servico);
-                await App.Current.MainPage.DisplayAlert("Cadastrar Servico", "Sucesso ao cadastrar servico", "Ok");
+                await App.Current.MainPage.DisplayAlert("Cadastrar Servico", "Erro ao cadastrar servico", "Ok");
             }
         }
 
