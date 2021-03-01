@@ -65,5 +65,16 @@ namespace Preciso.Data
                   Senha = item.Object.Senha
               }).ToList();
         }
+
+        public async Task<Profissional> VerificaLogin(string email)
+        {
+            var profissionais = await ListaProfissionais();
+
+            await firebase
+                  .Child("Profissionais")
+                  .OnceAsync<Profissional>();
+
+            return profissionais.Where(profissional => profissional.Email == email).FirstOrDefault();
+        }
     }
 }

@@ -35,20 +35,26 @@ namespace Preciso.ViewModels
 
         private async Task ExecuteLoginCommand()
         {
-            var profissionais = await firebase.ListaProfissionais();
-
-            var loginProfissional = profissionais.Where(profissional => profissional.Email == Email).FirstOrDefault();
-
-            if (loginProfissional == null)
+            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Senha))
             {
-                await App.Current.MainPage.DisplayAlert("", "Profissional não cadastrado", "Ok");
-                return;
+                await App.Current.MainPage.DisplayAlert("", "Informe o email e / ou senha", "Ok");
             }
-
-            if (loginProfissional.Senha == Senha )
-                await App.Current.MainPage.Navigation.PushAsync(new ListaServicosView());
             else
-                await App.Current.MainPage.DisplayAlert("Erro", "Senha incorreta", "Ok"); 
+            {
+                var loginProfissional = await firebase.VerificaLogin(Email);
+
+                if (loginProfissional != null)
+                {
+                    if (Email == loginProfissional.Email && Senha == loginProfissional.Senha)
+                        await App.Current.MainPage.Navigation.PushAsync(new ListaServicosView());
+                    else
+                        await App.Current.MainPage.DisplayAlert("Erro", "Informe o email/senha correto(s)", "Ok");
+                }
+                else
+                {
+                    await App.Current.MainPage.DisplayAlert("", "Profissional não cadastrado", "Ok");
+                }
+            }
         } 
     }
 }
