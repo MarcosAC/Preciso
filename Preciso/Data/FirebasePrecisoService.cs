@@ -1,6 +1,7 @@
 ﻿using Firebase.Database;
 using Firebase.Database.Query;
 using Preciso.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace Preciso.Data
         public async Task CadastrarProfissional(Profissional profissional) => 
             await firebase.Child("Profissionais").PostAsync(profissional);
 
-        public async Task DeletarProfissional(int id)
+        public async Task DeletarProfissional(Guid id)
         {
             var deletarServico = (await firebase
                 .Child("Profissionais")
