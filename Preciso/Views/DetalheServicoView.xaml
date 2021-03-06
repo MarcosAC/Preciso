@@ -5,27 +5,32 @@
              Title="Detalhes do Serviço">
     <ContentPage.Content>
         <ScrollView>
-            <Grid RowDefinitions="*,*,*,150,*,*" Padding="15">
+            <!--<Grid RowDefinitions="*,*,*,150,*,*" Padding="15">
                 <Entry Grid.Row="0"
                        Text="{Binding NomeCliente}"
+                       TextColor="Black"
 					   Placeholder="Nome"
                        IsEnabled="False" />
                 <Entry Grid.Row="1"
                        Text="{Binding ContatoCliente}"
+                       TextColor="Black"
 					   Placeholder="Contato"
                        IsEnabled="False" />
                 <Entry Grid.Row="2"
+                       Text="{Binding Titulo}"
+                       TextColor="Black"
                        Placeholder="Tipo de Serviço"
                        IsEnabled="False" />
                 
                 <Editor Grid.Row="3"
                         Text="{Binding Descricao}"
+                        TextColor="Black"
                         IsEnabled="False"
                         Placeholder="Descrição do Serviço"
                         HeightRequest="150" />
                 
-                <!--<Image Grid.Row="4"
-                       HeightRequest="300" />-->
+                <Image Grid.Row="4"
+                       HeightRequest="300" />
 
                 <Button Grid.Row="4"
 					Style="{StaticResource StyleButton}"
@@ -33,7 +38,61 @@
                 <Button Grid.Row="5"
 					Style="{StaticResource StyleButton}"
 					Text="Voltar" />
-            </Grid>
+            </Grid>-->
+
+            <StackLayout Padding="15">
+                <Label Text="Cliente"
+                       FontSize="Medium"
+                       TextColor="Black" />
+                
+                <Label Text="{Binding NomeCliente}"
+                       FontSize="Subtitle"
+                       TextColor="Black" />
+
+                <BoxView HeightRequest="1"
+                         Color="Black" />
+
+                <Label Text="Contato"
+                       FontSize="Medium"
+                       TextColor="Black" />
+
+                <Label Text="{Binding ContatoCliente}"
+                       FontSize="Subtitle"
+                       TextColor="Black" />
+
+                <BoxView HeightRequest="1"
+                         Color="Black" />
+
+                <Label Text="Tipo de Serviço"
+                       FontSize="Medium"
+                       TextColor="Black" />
+
+                <Label Text="{Binding Titulo}"
+                       FontSize="Subtitle"
+                       TextColor="Black" />
+
+                <BoxView HeightRequest="1"
+                         Color="Black" />
+
+                <Label Text="Descrição"
+                       FontSize="Medium"
+                       TextColor="Black" />
+
+                <Label Text="{Binding Descricao}"
+                       FontSize="Subtitle"
+                       TextColor="Black"
+                       HeightRequest="150" />
+
+                <BoxView HeightRequest="1"
+                         Color="Black" />
+
+                <Button Grid.Row="4"
+					Style="{StaticResource StyleButton}"
+					Text="Aceitar"/>
+                <!--<Button Grid.Row="5"
+					Style="{StaticResource StyleButton}"
+					Text="Voltar" />-->
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

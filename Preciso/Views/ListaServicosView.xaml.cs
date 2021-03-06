@@ -10,7 +10,6 @@ namespace Preciso.Views
             InitializeComponent();
 
             ViewModel = new ListaServicosViewModel();
-            //BindingContext = new ListaServicosViewModel();
         }
 
         protected override void OnAppearing()
@@ -27,10 +26,10 @@ namespace Preciso.Views
 
         private void OnItemSelect(object sender, SelectedItemChangedEventArgs e)
         {
-            //if (e.SelectedItem != null)
-            //    ViewModel.SelecionarServicoCommand.Execute(e.SelectedItem);
+            if (e.SelectedItem != null)
+                ViewModel.SelecionarServicoCommand.Execute(e.SelectedItem);
 
-            //ListaServicos.SelectedItem = null;
+            ListaServicos.SelectedItem = null;
         }
     }
 }

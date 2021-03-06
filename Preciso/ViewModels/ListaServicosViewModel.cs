@@ -33,7 +33,7 @@ namespace Preciso.ViewModels
             if (servicoSelecionado == null)
                 return;
 
-            await App.Current.MainPage.Navigation.PushModalAsync(new NavigationPage(new DetalheServicoView(servicoSelecionado)));
+            await App.Current.MainPage.Navigation.PushAsync(new DetalheServicoView(servicoSelecionado));
         }
     }
 }

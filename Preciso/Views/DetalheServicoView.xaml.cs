@@ -8,7 +8,7 @@ namespace Preciso.Views
     {
         public DetalheServicoView(Servico servicoSelecionado)
         {
-            InitializeComponent();
+            InitializeComponent();            
 
             BindingContext = new DetalhesServicoViewModel(servicoSelecionado);
         }
