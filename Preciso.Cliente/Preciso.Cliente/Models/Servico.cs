@@ -5,6 +5,11 @@ namespace Preciso.Cliente.Models
 {
     public class Servico
     {
+        public Servico()
+        {
+            Id = Guid.NewGuid().ToString();
+        }
+
         public string Id { get; set; }
         public DateTime DataSolicitacao { get; set; }
         public string NomeCliente { get; set; }
@@ -12,11 +17,6 @@ namespace Preciso.Cliente.Models
         public string Titulo { get; set; }
         public string Descricao { get; set; }
         public ImageSource Foto { get; set; }
-        public string CaminhoFoto { get; set; }
-
-        public Servico()
-        {
-            Id = Guid.NewGuid().ToString();
-        }
+        public string CaminhoFoto { get; set; }        
     }
 }
