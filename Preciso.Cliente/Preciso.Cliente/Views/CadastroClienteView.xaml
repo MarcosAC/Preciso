@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Preciso.Cliente.Views.CadastroClienteView"
+             Title="Cadastro Cliente">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15">
+                <Entry Style="{StaticResource StyleEntry}"
+                       Placeholder="Nome"
+                       Text="{Binding Nome}" />
+                
+                <Entry Style="{StaticResource StyleEntry}"
+                       Placeholder="Endereço"
+                       Text="{Binding Endereço}" />
+
+                <Entry Style="{StaticResource StyleEntry}"
+                       Placeholder="Celular"
+                       Text="{Binding Celular}" />
+
+                <Entry Style="{StaticResource StyleEntry}"
+                       Placeholder="Email"
+                       Text="{Binding Email}" />
+                
+                <Button Style="{StaticResource StyleButton}"
+                        Text="Salvar"
+                        Command="{Binding SalvarCommand}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

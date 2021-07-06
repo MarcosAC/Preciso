@@ -11,7 +11,7 @@ namespace Preciso.Cliente
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new PaginaInicialView());
+            MainPage = new NavigationPage(new CadastroClienteView());
         }
 
         protected override void OnStart()
