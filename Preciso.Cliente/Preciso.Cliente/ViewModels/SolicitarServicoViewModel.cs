@@ -11,7 +11,11 @@ namespace Preciso.Cliente.ViewModels
         //FirebaseStorageService firebaseStorageService = new FirebaseStorageService();
         //private FileResult foto;
 
-        private readonly FirebaseService firebase;        
+        private readonly FirebaseService firebase;
+        public SolicitarServicoViewModel()
+        {
+            firebase = new FirebaseService();
+        }
 
         private DateTime _dataSolicitacao;
         public DateTime DataSolicitacao 
@@ -60,12 +64,7 @@ namespace Preciso.Cliente.ViewModels
         { 
             get => _caminhoFoto;
             set => SetProperty(ref _caminhoFoto, value);
-        }
-
-        public SolicitarServicoViewModel()
-        {
-            firebase = new FirebaseService();
-        }
+        }        
 
         private Command _enviarSolicitacaoServicoCommand;
         public Command EnviarSolicitacaoServicoCommand =>
