@@ -2,9 +2,9 @@
 
 namespace Preciso.Cliente.Models
 {
-    public class Cliente
+    public class Usuario
     {
-        public Cliente()
+        public Usuario()
         {
             Id = Guid.NewGuid().ToString();
         }
