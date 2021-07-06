@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace Preciso.ViewModels
 {
-    public class AdicionarProfissionalViewModel : BaseViewModel
+    public class CadastroProfissionalViewModel : BaseViewModel
     {
         private readonly FirebasePrecisoService firebase;        
 
@@ -87,7 +87,7 @@ namespace Preciso.ViewModels
             set => SetProperty(ref _ativo, value);
         }
 
-        public AdicionarProfissionalViewModel()
+        public CadastroProfissionalViewModel()
         {
             firebase = new FirebasePrecisoService();
         }

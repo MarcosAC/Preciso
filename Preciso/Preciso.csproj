@@ -34,8 +34,8 @@
     <Compile Update="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\AdicionarProfissionalView.xaml.cs">
-      <DependentUpon>AdicionarProfissionalView.xaml</DependentUpon>
+    <Compile Update="Views\CadastroProfissionalView.xaml.cs">
+      <DependentUpon>CadastroProfissionalView.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\DetalheServicoView.xaml.cs">
       <DependentUpon>DetalheServicoView.xaml</DependentUpon>
@@ -49,7 +49,7 @@
     <EmbeddedResource Update="Views\LoginView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AdicionarProfissionalView.xaml">
+    <EmbeddedResource Update="Views\CadastroProfissionalView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DetalheServicoView.xaml">

@@ -19,7 +19,7 @@ namespace Preciso.Views
 
         private void OnTapCriarConta(object sender, System.EventArgs e)
         {
-            App.Current.MainPage.Navigation.PushAsync(new AdicionarProfissionalView());
+            App.Current.MainPage.Navigation.PushAsync(new CadastroProfissionalView());
         }
     }
 }
