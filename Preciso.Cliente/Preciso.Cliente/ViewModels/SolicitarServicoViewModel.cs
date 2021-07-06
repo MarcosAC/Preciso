@@ -19,6 +19,7 @@ namespace Preciso.Cliente.ViewModels
             get => _dataSolicitacao;
             set => SetProperty(ref _dataSolicitacao, value);
         }
+
         private string _nomeCliente;
         public string NomeCliente
         { 
