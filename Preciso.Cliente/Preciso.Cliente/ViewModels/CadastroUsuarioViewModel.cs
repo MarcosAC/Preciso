@@ -1,5 +1,6 @@
 ﻿using Preciso.Cliente.Data;
 using Preciso.Cliente.Models;
+using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -7,11 +8,18 @@ namespace Preciso.Cliente.ViewModels
 {
     public class CadastroUsuarioViewModel : BaseViewModel
     {
-        private readonly FirebaseService firebase;
+        private readonly FirebaseUsuarioService firebase;
 
         public CadastroUsuarioViewModel()
         {
-            firebase = new FirebaseService();
+            firebase = new FirebaseUsuarioService();
+        }
+
+        private Guid _id;
+        public Guid Id
+        {
+            get => _id;
+            set => SetProperty(ref _id, value);
         }
 
         private string _nome;
@@ -58,13 +66,22 @@ namespace Preciso.Cliente.ViewModels
 
             if (usuario != null)
             {
-                //await firebase.SolicitarServico(usuario);
+                await firebase.CadastrarUsuario(usuario);
                 await App.Current.MainPage.DisplayAlert("Cadastrar Usuário", "Sucesso ao cadastrar usuário", "Ok");
             }
             else
             {
                 await App.Current.MainPage.DisplayAlert("Cadastrar Usuário", "Erro ao cadastrar usuário", "Ok");
             }
+        }
+
+        private Command _editarDadosUsuarioCommand;
+        public Command EditarDadosProfissionalCommand =>
+            _editarDadosUsuarioCommand ?? (_editarDadosUsuarioCommand = new Command(async () => await ExecuteEditarDadosUsuarioCommand(Id)));
+
+        private async Task ExecuteEditarDadosUsuarioCommand(Guid id)
+        {
+            await firebase.Editar(id);
         }
     }
 }
