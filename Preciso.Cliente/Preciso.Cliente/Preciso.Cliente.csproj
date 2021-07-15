@@ -22,13 +22,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\CadastroUsuarioView.xaml.cs">
+      <DependentUpon>CadastroUsuarioView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\PaginaInicialView.xaml.cs">
       <DependentUpon>PaginaInicialView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\CadastroClienteView.xaml">
+    <EmbeddedResource Update="Views\CadastroUsuarioView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\PaginaInicialView.xaml">

@@ -5,13 +5,14 @@ using Xamarin.Forms.Xaml;
 
 namespace Preciso.Cliente
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class App : Application
     {
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new CadastroClienteView());
+            MainPage = new NavigationPage(new CadastroUsuarioView());
         }
 
         protected override void OnStart()

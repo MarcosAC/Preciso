@@ -3,13 +3,13 @@ using Xamarin.Forms;
 
 namespace Preciso.Cliente.Views
 {
-    public partial class SolicitarServicoView : ContentPage
+    public partial class CadastroUsuarioView : ContentPage
     {
-        public SolicitarServicoView()
+        public CadastroUsuarioView()
         {
             InitializeComponent();
 
-            BindingContext = new SolicitarServicoViewModel();
+            BindingContext = new CadastroUsuarioViewModel();
         }
     }
 }

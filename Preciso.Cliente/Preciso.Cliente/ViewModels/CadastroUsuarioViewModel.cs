@@ -50,9 +50,9 @@ namespace Preciso.Cliente.ViewModels
             set => SetProperty(ref _email, value);
         }
 
-        private Command __salvarCommand;
-        public Command EnviarSolicitacaoServicoCommand =>
-            __salvarCommand ?? (__salvarCommand = new Command(async () => await ExecuteSalvarCommand()));
+        private Command _salvarDadosUsuarioCommand;
+        public Command SalvarDadosUsuarioCommand =>
+            _salvarDadosUsuarioCommand ?? (_salvarDadosUsuarioCommand = new Command(async () => await ExecuteSalvarCommand()));
 
         private async Task ExecuteSalvarCommand()
         {
