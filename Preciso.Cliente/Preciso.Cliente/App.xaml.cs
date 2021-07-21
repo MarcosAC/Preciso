@@ -1,5 +1,4 @@
 ﻿using Preciso.Cliente.Views;
-using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,7 +11,7 @@ namespace Preciso.Cliente
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new CadastroUsuarioView());
+            MainPage = new NavigationPage(new LoginView());
         }
 
         protected override void OnStart()
