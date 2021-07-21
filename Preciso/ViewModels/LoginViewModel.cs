@@ -36,7 +36,7 @@ namespace Preciso.ViewModels
         {
             if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Senha))
             {
-                await App.Current.MainPage.DisplayAlert("", "Informe o email e / ou senha", "Ok");
+                await App.Current.MainPage.DisplayAlert("", "Informe o email e/ou senha", "Ok");
             }
             else
             {

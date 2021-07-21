@@ -2,6 +2,7 @@
 using Firebase.Database.Query;
 using Preciso.Cliente.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -26,6 +27,28 @@ namespace Preciso.Cliente.Data
                 .Child("Usuarios")
                 .Child(editarUsuario.Key)
                 .DeleteAsync();
+        }
+
+        public async Task<List<Usuario>> ListaUsuarios()
+        {
+            return (await firebase
+              .Child("Usuarios")
+              .OnceAsync<Usuario>()).Select(item => new Usuario
+              {
+                  Email = item.Object.Email,
+                  Senha = item.Object.Senha
+              }).ToList();
+        }
+
+        public async Task<Usuario> VerificaLogin(string email)
+        {
+            var profissionais = await ListaUsuarios();
+
+            await firebase
+                  .Child("Usuarios")
+                  .OnceAsync<Usuario>();
+
+            return profissionais.Where(profissional => profissional.Email == email).FirstOrDefault();
         }
     }
 }
