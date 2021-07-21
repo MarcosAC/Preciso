@@ -9,6 +9,11 @@ namespace Preciso.ViewModels
     {
         private readonly FirebasePrecisoService firebase;
 
+        public LoginViewModel()
+        {
+            firebase = new FirebasePrecisoService();
+        }
+
         private string _email;
         public string Email
         {
@@ -21,12 +26,7 @@ namespace Preciso.ViewModels
         {
             get => _senha;
             set => SetProperty(ref _senha, value);
-        }
-
-        public LoginViewModel()
-        {
-            firebase = new FirebasePrecisoService();
-        }
+        }        
 
         private Command _loginCommand;
         public Command LoginCommand =>
