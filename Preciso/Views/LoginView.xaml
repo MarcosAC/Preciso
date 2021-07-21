@@ -9,7 +9,7 @@
             <StackLayout Padding="15"
                          VerticalOptions="Center">
                 <Entry Style="{StaticResource StyleEntry}"
-					   Placeholder="Nome ou Emails"
+					   Placeholder="Nome ou Email"
                        Text="{Binding Email}" />
 
                 <Entry Style="{StaticResource StyleEntry}"
