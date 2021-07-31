@@ -16,15 +16,26 @@
 
                 <Entry Style="{StaticResource StyleEntry}"
                        Placeholder="Celular"
-                       Text="{Binding Celular}" />
+                       Text="{Binding Celular}"
+                       Keyboard="Telephone" />
 
                 <Entry Style="{StaticResource StyleEntry}"
                        Placeholder="Email"
-                       Text="{Binding Email}" />
-                
+                       Text="{Binding Email}"
+                       Keyboard="Email" />
+
+                <Entry Style="{StaticResource StyleEntry}"
+					   Placeholder="Senha"
+                       Text="{Binding Senha}"
+                       IsPassword="true" />
+
                 <Button Style="{StaticResource StyleButton}"
                         Text="Salvar"
                         Command="{Binding SalvarDadosUsuarioCommand}" />
+
+                <Button Style="{StaticResource StyleButton}"
+                        Text="Cancelar"
+                        Command="{Binding CancelarCommand}" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

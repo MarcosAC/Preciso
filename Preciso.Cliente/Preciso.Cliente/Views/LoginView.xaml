@@ -13,7 +13,8 @@
 
                 <Entry Style="{StaticResource StyleEntry}"
 					   Placeholder="Senha"
-                       Text="{Binding Senha}" />
+                       Text="{Binding Senha}"
+                       IsPassword="true" />
 
                 <Button	Style="{StaticResource StyleButton}"
                         Text="Entrar"

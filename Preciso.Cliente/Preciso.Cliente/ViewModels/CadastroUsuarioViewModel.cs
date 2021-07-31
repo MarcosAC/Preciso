@@ -50,6 +50,13 @@ namespace Preciso.Cliente.ViewModels
             set => SetProperty(ref _email, value);
         }
 
+        private string _senha;
+        public string Senha
+        {
+            get => _senha;
+            set => SetProperty(ref _senha, value);
+        }
+
         private Command _salvarDadosUsuarioCommand;
         public Command SalvarDadosUsuarioCommand =>
             _salvarDadosUsuarioCommand ?? (_salvarDadosUsuarioCommand = new Command(async () => await ExecuteSalvarCommand()));
@@ -61,7 +68,8 @@ namespace Preciso.Cliente.ViewModels
                 Nome = Nome,
                 Endereco = Endereco,
                 Celular = Celular,
-                Email = Email
+                Email = Email,
+                Senha = Senha
             };
 
             if (usuario != null)
