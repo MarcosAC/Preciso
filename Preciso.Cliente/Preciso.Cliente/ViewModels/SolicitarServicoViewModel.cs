@@ -11,10 +11,10 @@ namespace Preciso.Cliente.ViewModels
         //FirebaseStorageService firebaseStorageService = new FirebaseStorageService();
         //private FileResult foto;
 
-        private readonly FirebaseService firebase;
+        private readonly ServicoService servicoService;
         public SolicitarServicoViewModel()
         {
-            firebase = new FirebaseService();
+            servicoService = new ServicoService();
         }
 
         private DateTime _dataSolicitacao;
@@ -92,12 +92,12 @@ namespace Preciso.Cliente.ViewModels
 
             if (servico != null)
             {
-                await firebase.SolicitarServico(servico);
-                await App.Current.MainPage.DisplayAlert("Cadastrar Servico", "Sucesso ao cadastrar servico", "Ok");                
+                await servicoService.SolicitarServico(servico);
+                await App.Current.MainPage.DisplayAlert("Cadastrar Serviço", "Sucesso ao cadastrar serviço", "Ok");                
             }
             else
             {
-                await App.Current.MainPage.DisplayAlert("Cadastrar Servico", "Erro ao cadastrar servico", "Ok");
+                await App.Current.MainPage.DisplayAlert("Cadastrar Serviço", "Erro ao cadastrar serviço", "Ok");
             }
         }
 
