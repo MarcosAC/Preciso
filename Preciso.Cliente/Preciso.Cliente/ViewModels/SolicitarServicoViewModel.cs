@@ -17,6 +17,13 @@ namespace Preciso.Cliente.ViewModels
             servicoService = new ServicoService();
         }
 
+        private Guid _id;
+        public Guid Id
+        {
+            get => _id;
+            set => SetProperty(ref _id, value);
+        }
+
         private DateTime _dataSolicitacao;
         public DateTime DataSolicitacao 
         { 
@@ -103,11 +110,11 @@ namespace Preciso.Cliente.ViewModels
 
         private Command _cancelarSolicitacaoServicoCommand;
         public Command CancelarSolicitacaoServicoCommand =>
-            _cancelarSolicitacaoServicoCommand ?? (_cancelarSolicitacaoServicoCommand = new Command(async () => await ExecuteCancelarSolicitacaoServicoCommand()));
+            _cancelarSolicitacaoServicoCommand ?? (_cancelarSolicitacaoServicoCommand = new Command(async () => await ExecuteCancelarSolicitacaoServicoCommand(Id)));
 
-        private async Task ExecuteCancelarSolicitacaoServicoCommand()
+        private async Task ExecuteCancelarSolicitacaoServicoCommand(Guid id)
         {
-            //TODO - Fazer API e camada de DataBase.            
+            await servicoService.CancelarServico(id);
         }
 
         #region Funções de Inserir Foto

@@ -1,6 +1,7 @@
 ﻿using Firebase.Database;
 using Firebase.Database.Query;
 using Preciso.Cliente.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace Preciso.Cliente.Data
         public async Task SolicitarServico(Servico servico) =>
             await firebase.Child("Servicos").PostAsync<Servico>(servico);
 
-        public async Task<Servico> ObterServico(string id)
+        public async Task<Servico> ObterServicoPorId(Guid id)
         {
             ObservableCollection<Servico> servicos = ListaServicos();
 
@@ -30,6 +31,20 @@ namespace Preciso.Cliente.Data
                    .Child("Servicos")
                    .AsObservable<Servico>()
                    .AsObservableCollection();
+        }
+
+        public async Task CancelarServico(Guid id)
+        {
+            var cancelarServico = (await firebase
+                .Child("Servicos")
+                .OnceAsync<Servico>())
+                .Where(servico => servico.Object.Id == id)
+                .FirstOrDefault();
+
+            await firebase
+                .Child("Servicos")
+                .Child(cancelarServico.Key)
+                .DeleteAsync();
         }
     }
 }
