@@ -7,13 +7,12 @@ namespace Preciso.Cliente.Models
     {
         public Servico()
         {
-            Id = Guid.NewGuid();
+            IdServico = Guid.NewGuid();
         }
 
-        public Guid Id { get; set; }
+        public Guid IdServico { get; set; }
+        public Guid IdCliente { get; set; }
         public DateTime DataSolicitacao { get; set; }
-        public string NomeCliente { get; set; }
-        public string ContatoCliente { get; set; }
         public string Titulo { get; set; }
         public string Descricao { get; set; }
         public ImageSource Foto { get; set; }
