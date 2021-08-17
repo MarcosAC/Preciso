@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Preciso.Cliente.Views.DetalheServicoView">
+    <ContentPage.Content>
+        <ScrollView>            
+            <StackLayout Padding="15">
+                <Label Text="Cliente"
+                       FontSize="Medium"
+                       TextColor="Black" />
+
+                <Label Text="{Binding NomeCliente}"
+                       FontSize="Subtitle"
+                       TextColor="Black" />
+
+                <BoxView HeightRequest="1"
+                         Color="Black" />
+
+                <Label Text="Contato"
+                       FontSize="Medium"
+                       TextColor="Black" />
+
+                <Label Text="{Binding ContatoCliente}"
+                       FontSize="Subtitle"
+                       TextColor="Black" />
+
+                <BoxView HeightRequest="1"
+                         Color="Black" />
+
+                <Label Text="Tipo de Serviço"
+                       FontSize="Medium"
+                       TextColor="Black" />
+
+                <Label Text="{Binding Titulo}"
+                       FontSize="Subtitle"
+                       TextColor="Black" />
+
+                <BoxView HeightRequest="1"
+                         Color="Black" />
+
+                <Label Text="Descrição"
+                       FontSize="Medium"
+                       TextColor="Black" />
+
+                <Label Text="{Binding Descricao}"
+                       FontSize="Subtitle"
+                       TextColor="Black"
+                       HeightRequest="150" />
+
+                <BoxView HeightRequest="1"
+                         Color="Black" />
+
+                <Button Grid.Row="4"
+					Style="{StaticResource StyleButton}"
+					Text="Aceitar"/>
+                <!--<Button Grid.Row="5"
+					Style="{StaticResource StyleButton}"
+					Text="Voltar" />-->
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
