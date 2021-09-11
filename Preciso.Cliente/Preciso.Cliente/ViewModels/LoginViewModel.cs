@@ -45,13 +45,13 @@ namespace Preciso.Cliente.ViewModels
                 if (loginUsuario != null)
                 {
                     if (Email == loginUsuario.Email && Senha == loginUsuario.Senha)
-                        await App.Current.MainPage.Navigation.PushAsync(new CadastroUsuarioView());
+                        await App.Current.MainPage.Navigation.PushAsync(new SolicitarServicoView());
                     else
                         await App.Current.MainPage.DisplayAlert("Erro", "Informe o email/senha correto(s)", "Ok");
                 }
                 else
                 {
-                    await App.Current.MainPage.DisplayAlert("", "Usuátio não cadastrado", "Ok");
+                    await App.Current.MainPage.DisplayAlert("", "Usuário não cadastrado", "Ok");
                 }
             }
         }

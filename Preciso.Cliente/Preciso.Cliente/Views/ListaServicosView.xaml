@@ -5,10 +5,10 @@
              x:Class="Preciso.Cliente.Views.ListaServicosView">
     <ContentPage.Content>
         <ListView x:Name="ListaServicos"
-                  ItemsSource="{Binding Servicos}"
-                  ItemSelected="OnItemSelect"
+                  ItemsSource="{Binding Servicos}"                  
                   SelectedItem="{Binding ServicoSelecionado, Mode=TwoWay}"                          
                   HasUnevenRows="True">
+            <!--ItemSelected="OnItemSelect"-->
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

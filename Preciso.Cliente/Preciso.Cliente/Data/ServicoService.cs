@@ -22,7 +22,7 @@ namespace Preciso.Cliente.Data
             await firebase
               .Child("Servicos")
               .OnceAsync<Servico>();
-            return servicos.Where(servico => servico.Id == id).FirstOrDefault();
+            return servicos.Where(servico => servico.IdServico == id).FirstOrDefault();
         }
 
         public ObservableCollection<Servico> ListaServicos()
@@ -38,7 +38,7 @@ namespace Preciso.Cliente.Data
             var cancelarServico = (await firebase
                 .Child("Servicos")
                 .OnceAsync<Servico>())
-                .Where(servico => servico.Object.Id == id)
+                .Where(servico => servico.Object.IdCliente == id)
                 .FirstOrDefault();
 
             await firebase

@@ -91,6 +91,7 @@ namespace Preciso.Cliente.ViewModels
 
             var servico = new Servico
             {
+                //IdCliente = IdCliente,
                 NomeCliente = NomeCliente,
                 ContatoCliente = ContatoCliente,
                 Titulo = Titulo,
