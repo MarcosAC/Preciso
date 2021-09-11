@@ -11,10 +11,10 @@ namespace Preciso.Cliente.ViewModels
         //FirebaseStorageService firebaseStorageService = new FirebaseStorageService();
         //private FileResult foto;
 
-        private readonly ServicoService servicoService;
+        //private readonly ServicoService servicoService;
         public SolicitarServicoViewModel()
         {
-            servicoService = new ServicoService();
+            //servicoService = new ServicoService();
         }
 
         private Guid _id;
@@ -100,7 +100,7 @@ namespace Preciso.Cliente.ViewModels
 
             if (servico != null)
             {
-                await servicoService.SolicitarServico(servico);
+                //await servicoService.SolicitarServico(servico);
                 await App.Current.MainPage.DisplayAlert("Cadastrar Serviço", "Sucesso ao cadastrar serviço", "Ok");                
             }
             else
@@ -115,7 +115,7 @@ namespace Preciso.Cliente.ViewModels
 
         private async Task ExecuteCancelarSolicitacaoServicoCommand(Guid id)
         {
-            await servicoService.CancelarServico(id);
+            //await servicoService.CancelarServico(id);
         }
 
         #region Funções de Inserir Foto

@@ -12,20 +12,20 @@ namespace Preciso.Cliente.ViewModels
 {
     public class ListaServicosViewModel
     {
-        private readonly ServicoService servicoService;
+        //private readonly ServicoService servicoService;
 
         public ObservableCollection<Servico> Servicos { get; set; }
 
         public ListaServicosViewModel()
         {
-            servicoService = new ServicoService();
-            Servicos = CarregarServicos();
+            //servicoService = new ServicoService();
+           //Servicos = CarregarServicos();
         }
 
-        private ObservableCollection<Servico> CarregarServicos()
-        {
-            return servicoService.ListaServicos();
-        }
+        //private ObservableCollection<Servico> CarregarServicos()
+        //{
+        //    //return servicoService.ListaServicos();
+        //}
 
         private Command _selecionarServicoCommand;
         public Command SelecionarServicoCommand =>
