@@ -11,7 +11,7 @@ namespace Preciso.Cliente.Models
         }
 
         public Guid IdServico { get; set; }
-        public Guid IdCliente { get; set; }
+        public string IdUsuario { get; set; }
         public DateTime DataSolicitacao { get; set; }
         public string NomeCliente { get; set; }
         public string ContatoCliente { get; set; }
