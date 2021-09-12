@@ -33,7 +33,7 @@ namespace Preciso.Cliente.Data
               .Child("Servicos")
               .OnceAsync<Servico>();
 
-            return usuarios.Where(profissional => profissional.Nome == nome).FirstOrDefault();
+            return usuarios.Where(usuario => usuario.Nome == nome).FirstOrDefault();
         }
     }
 }
