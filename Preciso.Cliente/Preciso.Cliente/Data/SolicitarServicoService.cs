@@ -2,7 +2,6 @@
 using Firebase.Database.Query;
 using Preciso.Cliente.Models;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -34,7 +33,7 @@ namespace Preciso.Cliente.Data
               .Child("Servicos")
               .OnceAsync<Servico>();
 
-            return usuarios.Where(profissional => profissional.Nome == nome).FirstOrDefault();
+            return usuarios.Where(usuario => usuario.Nome == nome).FirstOrDefault();
         }
     }
 }
