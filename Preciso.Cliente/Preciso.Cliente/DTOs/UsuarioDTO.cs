@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace Preciso.Cliente.Models
+﻿namespace Preciso.Cliente.DTOs
 {
-    public class Usuario
+    public class UsuarioDTO
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         public string Nome { get; set; }
         public string Endereco { get; set; }
         public string Celular { get; set; }

@@ -12,9 +12,23 @@ namespace Preciso.Cliente.Data
     {
         FirebaseClient firebase = new FirebaseClient("https://presicoapp-default-rtdb.firebaseio.com/");
 
-        public async Task CadastrarUsuario(Usuario usuario) =>
-            await firebase.Child("Usuarios").PostAsync<Usuario>(usuario);
+        //public async Task CadastrarUsuario(Usuario usuario) =>
+        //    await firebase.Child("Usuarios").PostAsync<Usuario>(usuario);
 
+        public async Task CadastrarUsuario(Usuario usuario)
+        {
+            await firebase
+                .Child("Usuarios")
+                .PostAsync(new Usuario 
+                {
+                    Id = Guid.NewGuid(),
+                    Nome = usuario.Nome,
+                    Endereco = usuario.Endereco,
+                    Celular = usuario.Celular,
+                    Email = usuario.Email,
+                    Senha = usuario.Senha
+                });
+        }
         public async Task Editar(Guid id)
         {
             var editarUsuario = (await firebase
