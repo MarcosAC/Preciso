@@ -2,6 +2,6 @@
 {
     public class SolicitarServico
     {        
-        public string IdUsuario { get; set; }
+        public string Id { get; set; }
     }
 }

@@ -2,10 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:Helpers.Controls;assembly=Helpers"
-             x:Class="Preciso.Cliente.Views.ListaServicosView">
+             x:Class="Preciso.Cliente.Views.ListaServicosView"
+             Title="Lista de Serviços">
     <ContentPage.Content>
         <ListView x:Name="ListaServicos"
-                  ItemsSource="{Binding Servicos}"                  
+                  ItemsSource="{Binding Servicos}"   
+                  ItemSelected="OnItemSelect"
                   SelectedItem="{Binding ServicoSelecionado, Mode=TwoWay}"                          
                   HasUnevenRows="True">
             <!--ItemSelected="OnItemSelect"-->

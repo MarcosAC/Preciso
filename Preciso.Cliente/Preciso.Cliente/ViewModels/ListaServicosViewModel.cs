@@ -1,10 +1,7 @@
 ﻿using Preciso.Cliente.Data;
 using Preciso.Cliente.Models;
 using Preciso.Cliente.Views;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -12,20 +9,20 @@ namespace Preciso.Cliente.ViewModels
 {
     public class ListaServicosViewModel
     {
-        //private readonly ServicoService servicoService;
+        private readonly SolicitarServicoService solicitarServicoService;
 
         public ObservableCollection<Servico> Servicos { get; set; }
 
-        public ListaServicosViewModel()
+        private ObservableCollection<Servico> CarregarServicos()
         {
-            //servicoService = new ServicoService();
-           //Servicos = CarregarServicos();
+            return solicitarServicoService.ListaServicosSolicitados();
         }
 
-        //private ObservableCollection<Servico> CarregarServicos()
-        //{
-        //    //return servicoService.ListaServicos();
-        //}
+        public ListaServicosViewModel()
+        {
+            solicitarServicoService = new SolicitarServicoService();
+            Servicos = CarregarServicos();
+        }        
 
         private Command _selecionarServicoCommand;
         public Command SelecionarServicoCommand =>
