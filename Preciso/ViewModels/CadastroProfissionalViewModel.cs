@@ -118,7 +118,7 @@ namespace Preciso.ViewModels
             else
             {
                 await profissionalService.CadastrarProfissional(profissioanal);
-                await App.Current.MainPage.DisplayAlert("Cadastrar Servico", "Sucesso ao cadastrar servico", "Ok");
+                await App.Current.MainPage.DisplayAlert("Cadastrar Profissional", "Sucesso ao cadastrar profissional", "Ok");
             }
         }
 
