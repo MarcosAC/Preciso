@@ -8,7 +8,12 @@ namespace Preciso.ViewModels
 {
     public class CadastroProfissionalViewModel : BaseViewModel
     {
-        private readonly FirebasePrecisoService firebase;        
+        private readonly ProfissionalService profissionalService;
+
+        public CadastroProfissionalViewModel()
+        {
+            profissionalService = new ProfissionalService();
+        }
 
         private string _nome;
         public string Nome
@@ -85,12 +90,7 @@ namespace Preciso.ViewModels
         { 
             get => _ativo;
             set => SetProperty(ref _ativo, value);
-        }
-
-        public CadastroProfissionalViewModel()
-        {
-            firebase = new FirebasePrecisoService();
-        }
+        }        
 
         private Command _salvarDadosProfissionalCommand;
         public Command SalvarDadosProfiossionalCommand =>
@@ -102,8 +102,8 @@ namespace Preciso.ViewModels
             {
                 Nome = Nome,
                 Cpf = Cpf,
-                Celular = Celular,                
-                Endereco = Endereco,                
+                Celular = Celular,
+                Endereco = Endereco,
                 FormaPagamento = FormaPagamento,
                 TipoProfissional = TipoProfissional,
                 Email = Email,
@@ -117,7 +117,7 @@ namespace Preciso.ViewModels
             }
             else
             {
-                await firebase.CadastrarProfissional(profissioanal);
+                await profissionalService.CadastrarProfissional(profissioanal);
                 await App.Current.MainPage.DisplayAlert("Cadastrar Servico", "Sucesso ao cadastrar servico", "Ok");
             }
         }

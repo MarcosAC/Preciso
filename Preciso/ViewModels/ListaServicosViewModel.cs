@@ -9,19 +9,19 @@ namespace Preciso.ViewModels
 {
     public class ListaServicosViewModel : BaseViewModel
     {
-        private readonly FirebasePrecisoService firebase;
+        private readonly ServicoService servicoService;
 
         public ObservableCollection<Servico> Servicos { get; set; }
 
         public ListaServicosViewModel()
         {
-            firebase = new FirebasePrecisoService();
+            servicoService = new ServicoService();
             Servicos = CarregarServicos();
         }
 
         private ObservableCollection<Servico> CarregarServicos()
         {
-            return firebase.ListaServicos();
+            return servicoService.ListaServicos();
         }
 
         private Command _selecionarServicoCommand;

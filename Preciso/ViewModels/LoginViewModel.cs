@@ -7,11 +7,11 @@ namespace Preciso.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        private readonly FirebasePrecisoService firebase;
+        private readonly LoginService loginService;
 
         public LoginViewModel()
         {
-            firebase = new FirebasePrecisoService();
+            loginService = new LoginService();
         }
 
         private string _email;
@@ -40,7 +40,7 @@ namespace Preciso.ViewModels
             }
             else
             {
-                var loginProfissional = await firebase.VerificaLogin(Email);
+                var loginProfissional = await loginService.VerificaLogin(Email);
 
                 if (loginProfissional != null)
                 {
