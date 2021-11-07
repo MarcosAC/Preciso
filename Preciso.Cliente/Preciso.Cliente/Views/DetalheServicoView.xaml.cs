@@ -12,7 +12,7 @@ namespace Preciso.Cliente.Views
         {
             InitializeComponent();
 
-            BindingContext = new DetalheServicoViewModel(servicoSelecionado);
+            BindingContext = new DetalhesServicoViewModel(servicoSelecionado);
         }
     }
 }

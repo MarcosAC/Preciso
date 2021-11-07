@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Preciso.Cliente.Views.DetalheServicoView">
+             x:Class="Preciso.Cliente.Views.DetalheServicoView"
+             Title="Serviço Solicitado">
     <ContentPage.Content>
         <ScrollView>            
             <StackLayout Padding="15">
@@ -50,9 +51,9 @@
                 <BoxView HeightRequest="1"
                          Color="Black" />
 
-                <Button Grid.Row="4"
+                <!--<Button Grid.Row="4"
 					Style="{StaticResource StyleButton}"
-					Text="Aceitar"/>
+					Text="Aceitar"/>-->
                 <!--<Button Grid.Row="5"
 					Style="{StaticResource StyleButton}"
 					Text="Voltar" />-->
