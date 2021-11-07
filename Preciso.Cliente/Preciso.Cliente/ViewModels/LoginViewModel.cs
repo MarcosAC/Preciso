@@ -45,7 +45,7 @@ namespace Preciso.Cliente.ViewModels
                 if (loginUsuario != null)
                 {
                     if (Email == loginUsuario.Email && Senha == loginUsuario.Senha)
-                        await App.Current.MainPage.Navigation.PushAsync(new SolicitarServicoView());
+                        await App.Current.MainPage.Navigation.PushAsync(new MenuPrincipalView());
                     else
                         await App.Current.MainPage.DisplayAlert("Erro", "Informe o email/senha correto(s)", "Ok");
                 }

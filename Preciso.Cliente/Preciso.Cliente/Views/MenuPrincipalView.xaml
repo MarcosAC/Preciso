@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Preciso.Cliente.Views.MenuPrincipalView"
+             Title="Menu Preciso">
+    <ContentPage.Content>
+        <StackLayout Padding="15" VerticalOptions="Center">
+            <Button Style="{StaticResource StyleButton}"
+                    Text="Minha Conta" 
+                    Clicked="IrMinhaConta" />
+
+            <Button Style="{StaticResource StyleButton}"
+                    Text="Solicitar Serviço"
+                    Clicked="IrSolicitarServico" />
+
+            <Button Style="{StaticResource StyleButton}"
+                    Text="Meus Serviços"
+                    Clicked="IrMeusServicos" />            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
