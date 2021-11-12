@@ -5,7 +5,63 @@
              Title="Cadastrar Profissional">
     <ContentPage.Content>
         <ScrollView>
-            <Grid RowDefinitions="*,*,*,*,*,*,*,*,*,*,*" Padding="15">
+            <Grid RowDefinitions="*,*,*,*,*,*,*,*,*,*" Padding="15">
+                <Entry Grid.Row="0"
+                       Style="{StaticResource StyleEntry}"
+					   Placeholder="Nome" 
+                       Text="{Binding Nome}" />
+
+                <Entry Grid.Row="1"
+                       Style="{StaticResource StyleEntry}"
+					   Placeholder="CPF"
+                       Text="{Binding Cpf}" />
+
+                <Entry Grid.Row="2"
+                       Style="{StaticResource StyleEntry}"
+					   Placeholder="Celular"
+                       Text="{Binding Celular}" />
+
+                <Entry Grid.Row="3"
+                       Style="{StaticResource StyleEntry}"
+					   Placeholder="Endereco"
+                       Text="{Binding Endereco}" />
+
+                <Entry Grid.Row="4"
+                       Style="{StaticResource StyleEntry}"
+					   Placeholder="FormaPagamento"
+                       Text="{Binding FormaPagamento}" />                
+
+                <Picker Grid.Row="5" 
+                        Style="{StaticResource StyleEntry}"
+                        Title="Tipo Profissional"
+                        SelectedItem="{Binding TipoProfissional}">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Eletricista</x:String>
+                            <x:String>Bombeiro Hidráulico</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Entry Grid.Row="6"
+                       Style="{StaticResource StyleEntry}"
+					   Placeholder="Email"
+                       Text="{Binding Email}" />
+
+                <Entry Grid.Row="7"
+                       Style="{StaticResource StyleEntry}"
+					   Placeholder="Senha"
+                       Text="{Binding Senha}" />
+
+                <Button	Grid.Row="8"
+                        Style="{StaticResource StyleButton}"
+                        Text="Cadastrar" 
+                        Command="{Binding SalvarDadosProfiossionalCommand}" />
+                <Button Grid.Row="9"
+                        Style="{StaticResource StyleButton}"
+                        Text="Cancelar" />
+            </Grid>
+            <!--<Grid RowDefinitions="*,*,*,*,*,*,*,*,*,*,*" Padding="15">
                 <Entry Grid.Row="0"
                        Style="{StaticResource StyleEntry}"
 					   Placeholder="Nome" 
@@ -65,7 +121,7 @@
                 <Button Grid.Row="10"
                         Style="{StaticResource StyleButton}"
                         Text="Cancelar" />
-            </Grid>
+            </Grid>-->
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

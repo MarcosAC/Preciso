@@ -28,6 +28,7 @@
                         Style="{StaticResource StyleButton}"
                         Text="Enviar Imagem do Serviço"
                         Command="{Binding AdicionarFotoCommand}" />-->
+                
                 <Button Grid.Row="4"
                         Style="{StaticResource StyleButton}"
                         Text="Solicitar Serviço"

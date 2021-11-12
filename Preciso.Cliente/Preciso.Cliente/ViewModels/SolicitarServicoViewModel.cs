@@ -33,12 +33,12 @@ namespace Preciso.Cliente.ViewModels
             set => SetProperty(ref _idUsuario, value);
         }
 
-        private DateTime _dataSolicitacao;
-        public DateTime DataSolicitacao 
-        { 
-            get => _dataSolicitacao;
-            set => SetProperty(ref _dataSolicitacao, value);
-        }
+        //private DateTime _dataSolicitacao;
+        //public DateTime DataSolicitacao 
+        //{ 
+        //    get => _dataSolicitacao;
+        //    set => SetProperty(ref _dataSolicitacao, value);
+        //}
 
         private string _nomeCliente;
         public string NomeCliente

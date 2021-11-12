@@ -1,6 +1,5 @@
 ﻿using Preciso.Data;
 using Preciso.Models;
-using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -50,19 +49,19 @@ namespace Preciso.ViewModels
             set => SetProperty(ref _formaPagamento, value);
         }
 
-        private DateTime _dataAtivacao;
-        public DateTime DataAtivacao
-        {
-            get => _dataAtivacao;
-            set => SetProperty(ref _dataAtivacao, value);
-        }
+        //private DateTime _dataAtivacao;
+        //public DateTime DataAtivacao
+        //{
+        //    get => _dataAtivacao;
+        //    set => SetProperty(ref _dataAtivacao, value);
+        //}
 
-        private DateTime _dataDesativado;
-        public DateTime DataDesativado
-        {
-            get => _dataDesativado;
-            set => SetProperty(ref _dataDesativado, value);
-        }
+        //private DateTime _dataDesativado;
+        //public DateTime DataDesativado
+        //{
+        //    get => _dataDesativado;
+        //    set => SetProperty(ref _dataDesativado, value);
+        //}
 
         private string _tipoProfissional;
         public string TipoProfissional
@@ -108,7 +107,7 @@ namespace Preciso.ViewModels
                 TipoProfissional = TipoProfissional,
                 Email = Email,
                 Senha = Senha,
-                DataAtivacao = DataAtivacao
+                //DataAtivacao = DataAtivacao
             };            
 
             if (profissioanal == null)

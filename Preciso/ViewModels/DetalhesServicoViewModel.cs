@@ -1,5 +1,4 @@
 ﻿using Preciso.Models;
-using System;
 
 namespace Preciso.ViewModels
 {
@@ -22,15 +21,15 @@ namespace Preciso.ViewModels
             }
         }
 
-        public DateTime DataSolicitacao
-        {
-            get { return _servicoSelecionado.DataSolicitacao; }
-            set
-            {
-                _servicoSelecionado.DataSolicitacao = value;
-                OnPropertyChanged();
-            }
-        }
+        //public DateTime DataSolicitacao
+        //{
+        //    get { return _servicoSelecionado.DataSolicitacao; }
+        //    set
+        //    {
+        //        _servicoSelecionado.DataSolicitacao = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
         public string NomeCliente
         {
