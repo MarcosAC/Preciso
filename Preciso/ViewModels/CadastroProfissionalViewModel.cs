@@ -1,4 +1,5 @@
 ﻿using Preciso.Data;
+using Preciso.DTOs;
 using Preciso.Models;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -96,7 +97,7 @@ namespace Preciso.ViewModels
             _salvarDadosProfissionalCommand ?? (_salvarDadosProfissionalCommand = new Command(async () => await ExecuteSalvarDadosProfissionaisCommand()));
 
         private async Task ExecuteSalvarDadosProfissionaisCommand()
-        {            
+        {
             var profissioanal = new Profissional
             {
                 Nome = Nome,
@@ -123,11 +124,29 @@ namespace Preciso.ViewModels
 
         private Command _editarDadosProfissionalCommand;
         public Command EditarDadosProfissionalCommand =>
-            _editarDadosProfissionalCommand ?? (_editarDadosProfissionalCommand = new Command(async () => ExecuteEditarDadosProfissionalCommand()));
+            _editarDadosProfissionalCommand ?? (_editarDadosProfissionalCommand = new Command(async () => await ExecuteEditarDadosProfissionalCommand()));
 
         private async Task ExecuteEditarDadosProfissionalCommand()
         {
-            //TODO - Fazer API e camada de DataBase.
-        }        
+            var profissioanalDTO = new ProfissionalDTO
+            {
+                Nome = Nome,
+                Cpf = Cpf,
+                Celular = Celular,
+                Endereco = Endereco,
+                FormaPagamento = FormaPagamento,
+                TipoProfissional = TipoProfissional,
+                Email = Email,
+                Senha = Senha,
+                //DataAtivacao = DataAtivacao
+            };
+
+            await profissionalService.EditarProfissional(profissioanalDTO);
+        }  
+        
+        private async Task<ProfissionalDTO> CarregaProfissional()
+        {
+            //return await profissionalService.ListaProfissionais();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Firebase.Database;
+using Preciso.DTOs;
 using Preciso.Models;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Preciso.Data
             profissionalService = new ProfissionalService();
         }
 
-        public async Task<Profissional> VerificaLogin(string email)
+        public async Task<ProfissionalDTO> VerificaLogin(string email)
         {
             var profissionais = await profissionalService.ListaProfissionais();
 

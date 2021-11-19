@@ -57,6 +57,12 @@
                         Style="{StaticResource StyleButton}"
                         Text="Cadastrar" 
                         Command="{Binding SalvarDadosProfiossionalCommand}" />
+
+                <Button	Grid.Row="8"
+                        Style="{StaticResource StyleButton}"
+                        Text="Editar" 
+                        Command="{Binding EditarDadosProfissionalCommand}" />
+                
                 <Button Grid.Row="9"
                         Style="{StaticResource StyleButton}"
                         Text="Cancelar" />

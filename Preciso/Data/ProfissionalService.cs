@@ -69,9 +69,27 @@ namespace Preciso.Data
                 .Child("Profissionais")
                 .OnceAsync<ProfissionalDTO>()).Select(item => new ProfissionalDTO
                 {
-                    Id = item.Object.Id
+                    Id = item.Object.Id,
+                    Nome = item.Object.Nome,
+                    Cpf = item.Object.Cpf,
+                    Celular = item.Object.Celular,
+                    Endereco = item.Object.Endereco,
+                    FormaPagamento = item.Object.FormaPagamento,
+                    Email = item.Object.Email,
+                    Senha = item.Object.Senha
                 })
                 .ToList();
+    }
+
+        public async Task<ProfissionalDTO> VerificaLogin(string email)
+        {
+            var profissionais = await ListaProfissionais();
+
+            await firebase
+                  .Child("Usuarios")
+                  .OnceAsync<Profissional>();
+
+            return profissionais.Where(profissional => profissional.Email == email).FirstOrDefault();
         }
     }
 }
