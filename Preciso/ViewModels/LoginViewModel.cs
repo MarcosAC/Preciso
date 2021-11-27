@@ -1,4 +1,6 @@
 ﻿using Preciso.Data;
+using Preciso.Data.LocalData.Repositorio;
+using Preciso.Data.Model;
 using Preciso.Views;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -7,11 +9,13 @@ namespace Preciso.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        private readonly LoginService loginService;
+        private readonly LoginService _loginService;
+        private readonly IRepositorioProfissional _repositorioProfissional;
 
-        public LoginViewModel()
+        public LoginViewModel(LoginService loginService, IRepositorioProfissional repositorioProfissional)
         {
-            loginService = new LoginService();
+            _loginService = loginService;
+            _repositorioProfissional = repositorioProfissional;
         }
 
         private string _email;
@@ -40,12 +44,23 @@ namespace Preciso.ViewModels
             }
             else
             {
-                var loginProfissional = await loginService.VerificaLogin(Email);
+                var loginProfissional = await _loginService.VerificaLogin(Email);
+
+                var profissional = new Profissional
+                {
+                    Nome = loginProfissional.Nome,
+                    Cpf = loginProfissional.Cpf,
+                    Endereco = loginProfissional.Endereco,
+                    TipoProfissional = loginProfissional.TipoProfissional
+                };
 
                 if (loginProfissional != null)
                 {
                     if (Email == loginProfissional.Email && Senha == loginProfissional.Senha)
+                    {
+                        _repositorioProfissional.AdicionarFuncionario(profissional);
                         await App.Current.MainPage.Navigation.PushAsync(new MenuPrincipalView());
+                    }                        
                     else
                         await App.Current.MainPage.DisplayAlert("Erro", "Informe o email/senha correto(s)", "Ok");
                 }
