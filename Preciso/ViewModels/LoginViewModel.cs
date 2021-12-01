@@ -1,6 +1,7 @@
 ﻿using Preciso.Data;
 using Preciso.Data.LocalData.Repositorio;
 using Preciso.Data.Model;
+using Preciso.DTOs;
 using Preciso.Views;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -10,12 +11,12 @@ namespace Preciso.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         private readonly LoginService _loginService;
-        private readonly IRepositorioProfissional _repositorioProfissional;
+        private readonly RepositorioProfissional _repositorioProfissional;
 
-        public LoginViewModel(LoginService loginService, IRepositorioProfissional repositorioProfissional)
+        public LoginViewModel()
         {
-            _loginService = loginService;
-            _repositorioProfissional = repositorioProfissional;
+            _loginService = new LoginService();
+            _repositorioProfissional = new RepositorioProfissional();
         }
 
         private string _email;
@@ -46,19 +47,11 @@ namespace Preciso.ViewModels
             {
                 var loginProfissional = await _loginService.VerificaLogin(Email);
 
-                var profissional = new Profissional
-                {
-                    Nome = loginProfissional.Nome,
-                    Cpf = loginProfissional.Cpf,
-                    Endereco = loginProfissional.Endereco,
-                    TipoProfissional = loginProfissional.TipoProfissional
-                };
-
                 if (loginProfissional != null)
                 {
                     if (Email == loginProfissional.Email && Senha == loginProfissional.Senha)
                     {
-                        _repositorioProfissional.AdicionarFuncionario(profissional);
+                        _repositorioProfissional.AdicionarFuncionario(DadosProfissional(loginProfissional));
                         await App.Current.MainPage.Navigation.PushAsync(new MenuPrincipalView());
                     }                        
                     else
@@ -69,6 +62,19 @@ namespace Preciso.ViewModels
                     await App.Current.MainPage.DisplayAlert("", "Profissional não cadastrado", "Ok");
                 }
             }
-        } 
+        }
+        
+        private Profissional DadosProfissional(ProfissionalDTO profissionalDTO)
+        {
+            var profissional = new Profissional
+            {
+                Nome = profissionalDTO.Nome,
+                Cpf = profissionalDTO.Cpf,
+                Endereco = profissionalDTO.Endereco,
+                TipoProfissional = profissionalDTO.TipoProfissional
+            };
+
+            return profissional;
+        }
     }
 }

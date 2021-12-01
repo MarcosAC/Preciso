@@ -144,9 +144,9 @@ namespace Preciso.ViewModels
             await profissionalService.EditarProfissional(profissioanalDTO);
         }  
         
-        private async Task<ProfissionalDTO> CarregaProfissional()
-        {
-            //return await profissionalService.ListaProfissionais();
-        }
+        //private async Task<ProfissionalDTO> CarregaProfissional()
+        //{
+        //    //return await profissionalService.ListaProfissionais();
+        //}
     }
 }

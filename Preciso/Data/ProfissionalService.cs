@@ -76,7 +76,8 @@ namespace Preciso.Data
                     Endereco = item.Object.Endereco,
                     FormaPagamento = item.Object.FormaPagamento,
                     Email = item.Object.Email,
-                    Senha = item.Object.Senha
+                    Senha = item.Object.Senha,
+                    TipoProfissional = item.Object.TipoProfissional
                 })
                 .ToList();
     }

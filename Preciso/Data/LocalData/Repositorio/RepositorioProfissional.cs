@@ -6,9 +6,9 @@ namespace Preciso.Data.LocalData.Repositorio
     {
         private readonly DbLocal _dbLocal;
 
-        public RepositorioProfissional(DbLocal dbLocal)
+        public RepositorioProfissional()
         {
-            _dbLocal = dbLocal;
+            _dbLocal = new DbLocal();
         }
 
         public void AdicionarFuncionario(Profissional profissional)
