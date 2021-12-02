@@ -1,7 +1,12 @@
-﻿namespace Preciso.Data.Model
+﻿using SQLite;
+
+namespace Preciso.Data.Model
 {
+    [Table("Contato")]
     public class Profissional
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Cpf { get; set; }
         public string Celular { get; set; }

@@ -71,6 +71,7 @@ namespace Preciso.ViewModels
                 Nome = profissionalDTO.Nome,
                 Cpf = profissionalDTO.Cpf,
                 Endereco = profissionalDTO.Endereco,
+                Email = profissionalDTO.Email,
                 TipoProfissional = profissionalDTO.TipoProfissional
             };
 
