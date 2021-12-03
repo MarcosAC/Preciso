@@ -51,7 +51,7 @@ namespace Preciso.ViewModels
                 {
                     if (Email == loginProfissional.Email && Senha == loginProfissional.Senha)
                     {
-                        _repositorioProfissional.AdicionarFuncionario(DadosProfissional(loginProfissional));
+                        _repositorioProfissional.AdicionarFuncionario(DadosProfissional(loginProfissional));                       
                         await App.Current.MainPage.Navigation.PushAsync(new MenuPrincipalView());
                     }                        
                     else

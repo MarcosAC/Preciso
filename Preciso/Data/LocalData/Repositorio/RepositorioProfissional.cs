@@ -13,7 +13,8 @@ namespace Preciso.Data.LocalData.Repositorio
 
         public void AdicionarFuncionario(Profissional profissional)
         {
-            _dbLocal.AdicionarProfissional(profissional);
+            if (ObterProfissional(profissional.Email) == null)
+                _dbLocal.AdicionarProfissional(profissional);
         }
 
         public Profissional ObterProfissional(string email)
