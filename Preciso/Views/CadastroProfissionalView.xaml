@@ -1,133 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Preciso.Views"
              x:Class="Preciso.Views.CadastroProfissionalView"
              Title="Cadastrar Profissional">
     <ContentPage.Content>
         <ScrollView>
-            <Grid RowDefinitions="*,*,*,*,*,*,*,*,*,*" Padding="15">
-                <Entry Grid.Row="0"
-                       Style="{StaticResource StyleEntry}"
-					   Placeholder="Nome" 
-                       Text="{Binding Nome}" />
+            <StackLayout Padding="15">
+                <local:CadastroView />
 
-                <Entry Grid.Row="1"
-                       Style="{StaticResource StyleEntry}"
-					   Placeholder="CPF"
-                       Text="{Binding Cpf}" />
+                <Button Style="{StaticResource StyleButton}"
+                    Text="Cadastrar"
+                    Command="{Binding SalvarDadosProfiossionalCommand}" />
 
-                <Entry Grid.Row="2"
-                       Style="{StaticResource StyleEntry}"
-					   Placeholder="Celular"
-                       Text="{Binding Celular}" />
+                <Button Style="{StaticResource StyleButton}"
+                    Text="Editar"
+                    Command="{Binding EditarDadosProfissionalCommand}" />
 
-                <Entry Grid.Row="3"
-                       Style="{StaticResource StyleEntry}"
-					   Placeholder="Endereco"
-                       Text="{Binding Endereco}" />
-
-                <Entry Grid.Row="4"
-                       Style="{StaticResource StyleEntry}"
-					   Placeholder="FormaPagamento"
-                       Text="{Binding FormaPagamento}" />                
-
-                <Picker Grid.Row="5" 
-                        Style="{StaticResource StyleEntry}"
-                        Title="Tipo Profissional"
-                        SelectedItem="{Binding TipoProfissional}">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Eletricista</x:String>
-                            <x:String>Bombeiro Hidráulico</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
-
-                <Entry Grid.Row="6"
-                       Style="{StaticResource StyleEntry}"
-					   Placeholder="Email"
-                       Text="{Binding Email}" />
-
-                <Entry Grid.Row="7"
-                       Style="{StaticResource StyleEntry}"
-					   Placeholder="Senha"
-                       Text="{Binding Senha}" />
-
-                <Button	Grid.Row="8"
-                        Style="{StaticResource StyleButton}"
-                        Text="Cadastrar" 
-                        Command="{Binding SalvarDadosProfiossionalCommand}" />
-
-                <Button	Grid.Row="8"
-                        Style="{StaticResource StyleButton}"
-                        Text="Editar" 
-                        Command="{Binding EditarDadosProfissionalCommand}" />
-                
-                <Button Grid.Row="9"
-                        Style="{StaticResource StyleButton}"
-                        Text="Cancelar" />
-            </Grid>
-            <!--<Grid RowDefinitions="*,*,*,*,*,*,*,*,*,*,*" Padding="15">
-                <Entry Grid.Row="0"
-                       Style="{StaticResource StyleEntry}"
-					   Placeholder="Nome" 
-                       Text="{Binding Nome}" />
-
-                <Entry Grid.Row="1"
-                       Style="{StaticResource StyleEntry}"
-					   Placeholder="CPF"
-                       Text="{Binding Cpf}" />
-
-                <Entry Grid.Row="2"
-                       Style="{StaticResource StyleEntry}"
-					   Placeholder="Celular"
-                       Text="{Binding Celular}" />                
-
-                <Entry Grid.Row="3"
-                       Style="{StaticResource StyleEntry}"
-					   Placeholder="Endereco"
-                       Text="{Binding Endereco}" />
-
-                <Entry Grid.Row="4"
-                       Style="{StaticResource StyleEntry}"
-					   Placeholder="FormaPagamento"
-                       Text="{Binding FormaPagamento}" />
-
-                <Entry Grid.Row="5"
-                       Style="{StaticResource StyleEntry}"
-					   Placeholder="DataAtivacao"
-                       Text="{Binding DataAtivacao}" />
-
-                <Picker Grid.Row="6" 
-                        Style="{StaticResource StyleEntry}"
-                        Title="Tipo Profissional"
-                        SelectedItem="{Binding TipoProfissional}">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Eletricista</x:String>
-                            <x:String>Bombeiro Hidráulico</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
-
-                <Entry Grid.Row="7"
-                       Style="{StaticResource StyleEntry}"
-					   Placeholder="Email"
-                       Text="{Binding Email}" />
-
-                <Entry Grid.Row="8"
-                       Style="{StaticResource StyleEntry}"
-					   Placeholder="Senha"
-                       Text="{Binding Senha}" />
-
-                <Button	Grid.Row="9"
-                        Style="{StaticResource StyleButton}"
-                        Text="Cadastrar" 
-                        Command="{Binding SalvarDadosProfiossionalCommand}" />
-                <Button Grid.Row="10"
-                        Style="{StaticResource StyleButton}"
-                        Text="Cancelar" />
-            </Grid>-->
-        </ScrollView>
+                <Button Style="{StaticResource StyleButton}"
+                    Text="Cancelar" />
+            </StackLayout>
+        </ScrollView>        
     </ContentPage.Content>
 </ContentPage>
