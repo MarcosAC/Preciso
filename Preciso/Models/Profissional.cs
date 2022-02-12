@@ -4,6 +4,11 @@ namespace Preciso.Models
 {
     public class Profissional
     {
+        public Profissional()
+        {
+            Id = Guid.NewGuid();
+        }
+
         public Guid Id { get; set; }
         public string Nome { get; set; }
         public string Cpf { get; set; }        
@@ -15,11 +20,6 @@ namespace Preciso.Models
         public string Senha { get; set; }        
         public bool Ativo { get; set; }
         public DateTime DataAtivacao { get; set; }
-        public DateTime DataDesativado { get; set; }
-
-        public Profissional()
-        {
-            Id = Guid.NewGuid();
-        }
+        public DateTime DataDesativado { get; set; }        
     }
 }

@@ -2,6 +2,7 @@
 using Preciso.Data.LocalData.Repositorio;
 using Preciso.DTOs;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Preciso.ViewModels
@@ -90,20 +91,29 @@ namespace Preciso.ViewModels
 
         private async Task ExecuteEditarDadosProfissionalCommand()
         {
-            var profissioanalDTO = new ProfissionalDto
-            {
-                Nome = Nome,
-                Cpf = Cpf,
-                Celular = Celular,
-                Endereco = Endereco,
-                FormaPagamento = FormaPagamento,
-                TipoProfissional = TipoProfissional,
-                Email = Email,
-                Senha = Senha,
-                //DataAtivacao = DataAtivacao
-            };
+            var current = Connectivity.NetworkAccess;
 
-            await profissionalService.EditarProfissional(profissioanalDTO);
+            if (current == NetworkAccess.Internet)
+            {
+                var profissioanalDTO = new ProfissionalDto
+                {
+                    Nome = Nome,
+                    Cpf = Cpf,
+                    Celular = Celular,
+                    Endereco = Endereco,
+                    FormaPagamento = FormaPagamento,
+                    TipoProfissional = TipoProfissional,
+                    Email = Email,
+                    Senha = Senha,
+                    //DataAtivacao = DataAtivacao
+                };
+
+                await profissionalService.EditarProfissional(profissioanalDTO);
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Sem Conexão", "Sem conexão com a internet!", "Ok");
+            }
         }
 
         private void DadosProfissional()
