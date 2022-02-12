@@ -17,7 +17,7 @@ namespace Preciso.Data
             profissionalService = new ProfissionalService();
         }
 
-        public async Task<ProfissionalDTO> VerificaLogin(string email)
+        public async Task<ProfissionalDto> VerificaLogin(string email)
         {
             var profissionais = await profissionalService.ListaProfissionais();
 

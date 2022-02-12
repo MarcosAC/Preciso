@@ -1,8 +1,6 @@
 ﻿using Preciso.Data.Model;
 using SQLite;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
 
 namespace Preciso.Data.LocalData
@@ -28,6 +26,11 @@ namespace Preciso.Data.LocalData
         public Profissional ObterProfssional(string email)
         {
             return _conexao.Table<Profissional>().FirstOrDefault(profissional => profissional.Email == email);
+        }
+
+        public List<Profissional> ListaProfissionais()
+        {
+            return _conexao.Table<Profissional>().ToList();
         }
     }
 }

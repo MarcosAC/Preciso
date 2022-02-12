@@ -1,4 +1,5 @@
 ﻿using Preciso.Data.Model;
+using System.Collections.Generic;
 
 namespace Preciso.Data.LocalData.Repositorio
 {
@@ -15,6 +16,11 @@ namespace Preciso.Data.LocalData.Repositorio
         {
             if (ObterProfissional(profissional.Email) == null)
                 _dbLocal.AdicionarProfissional(profissional);
+        }
+
+        public List<Profissional> ListaProfissionais()
+        {
+            return _dbLocal.ListaProfissionais();
         }
 
         public Profissional ObterProfissional(string email)

@@ -14,7 +14,7 @@ namespace Preciso.Views
 
         private void IrMinhaConta(object sender, EventArgs e)
         {
-            App.Current.MainPage.Navigation.PushAsync(new CadastroProfissionalView());
+            App.Current.MainPage.Navigation.PushAsync(new EditarCadastroProfissionalView());
         }
 
         private void IrListaServicos(object sender, EventArgs e)

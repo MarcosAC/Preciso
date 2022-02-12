@@ -16,16 +16,16 @@ namespace Preciso.Data
         public async Task CadastrarProfissional(Profissional profissional) =>
             await firebase.Child("Profissionais").PostAsync(profissional);
 
-        public async Task EditarProfissional(ProfissionalDTO profissionalDTO)
+        public async Task EditarProfissional(ProfissionalDto profissionalDTO)
         {
             var toUpdateContato = (await firebase
              .Child("Profissionais")
-               .OnceAsync<ProfissionalDTO>())
+               .OnceAsync<ProfissionalDto>())
                   .Where(profissional => profissional.Object.Id == profissionalDTO.Id).FirstOrDefault();
             await firebase
               .Child("Profissionais")
                 .Child(toUpdateContato.Key)
-                  .PutAsync(new ProfissionalDTO()
+                  .PutAsync(new ProfissionalDto()
                   {
                       Nome = profissionalDTO.Nome,
                       Cpf = profissionalDTO.Cpf,
@@ -63,11 +63,11 @@ namespace Preciso.Data
         //      }).ToList();
         //}
 
-        public async Task<List<ProfissionalDTO>> ListaProfissionais()
+        public async Task<List<ProfissionalDto>> ListaProfissionais()
         {
             return (await firebase
                 .Child("Profissionais")
-                .OnceAsync<ProfissionalDTO>()).Select(item => new ProfissionalDTO
+                .OnceAsync<ProfissionalDto>()).Select(item => new ProfissionalDto
                 {
                     Id = item.Object.Id,
                     Nome = item.Object.Nome,
@@ -82,7 +82,7 @@ namespace Preciso.Data
                 .ToList();
     }
 
-        public async Task<ProfissionalDTO> VerificaLogin(string email)
+        public async Task<ProfissionalDto> VerificaLogin(string email)
         {
             var profissionais = await ListaProfissionais();
 

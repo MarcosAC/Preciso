@@ -64,14 +64,17 @@ namespace Preciso.ViewModels
             }
         }
         
-        private Profissional DadosProfissional(ProfissionalDTO profissionalDTO)
+        private Profissional DadosProfissional(ProfissionalDto profissionalDTO)
         {
             var profissional = new Profissional
             {
                 Nome = profissionalDTO.Nome,
                 Cpf = profissionalDTO.Cpf,
+                Celular = profissionalDTO.Celular,
                 Endereco = profissionalDTO.Endereco,
+                FormaPagamento = profissionalDTO.FormaPagamento,
                 Email = profissionalDTO.Email,
+                Senha = profissionalDTO.Senha,
                 TipoProfissional = profissionalDTO.TipoProfissional
             };
 

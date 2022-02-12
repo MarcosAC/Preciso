@@ -1,20 +1,22 @@
 ﻿using Preciso.Data;
 using Preciso.Data.LocalData.Repositorio;
-using Preciso.Models;
+using Preciso.DTOs;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Preciso.ViewModels
 {
-    public class CadastroProfissionalViewModel : BaseViewModel
+    public class EditarCadastroProfissionalViewModel : BaseViewModel
     {
         private readonly ProfissionalService profissionalService;
         private readonly RepositorioProfissional repositorioProfissional;
 
-        public CadastroProfissionalViewModel()
+        public EditarCadastroProfissionalViewModel()
         {
             profissionalService = new ProfissionalService();
             repositorioProfissional = new RepositorioProfissional();
+
+            DadosProfissional();
         }
 
         private string _nome;
@@ -36,11 +38,11 @@ namespace Preciso.ViewModels
         {
             get => _celular;
             set => SetProperty(ref _celular, value);
-        }        
+        }
 
         private string _endereco;
         public string Endereco
-        { 
+        {
             get => _endereco;
             set => SetProperty(ref _endereco, value);
         }
@@ -51,20 +53,6 @@ namespace Preciso.ViewModels
             get => _formaPagamento;
             set => SetProperty(ref _formaPagamento, value);
         }
-
-        //private DateTime _dataAtivacao;
-        //public DateTime DataAtivacao
-        //{
-        //    get => _dataAtivacao;
-        //    set => SetProperty(ref _dataAtivacao, value);
-        //}
-
-        //private DateTime _dataDesativado;
-        //public DateTime DataDesativado
-        //{
-        //    get => _dataDesativado;
-        //    set => SetProperty(ref _dataDesativado, value);
-        //}
 
         private string _tipoProfissional;
         public string TipoProfissional
@@ -89,18 +77,20 @@ namespace Preciso.ViewModels
 
         private bool _ativo;
         public bool Ativo
-        { 
+        {
             get => _ativo;
             set => SetProperty(ref _ativo, value);
-        }        
+        }
 
-        private Command _salvarDadosProfissionalCommand;
-        public Command SalvarDadosProfiossionalCommand =>
-            _salvarDadosProfissionalCommand ?? (_salvarDadosProfissionalCommand = new Command(async () => await ExecuteSalvarDadosProfissionaisCommand()));
+        private Command _editarDadosProfissionalCommand;
+        public Command EditarDadosProfissionalCommand =>
+            _editarDadosProfissionalCommand ?? (
+            _editarDadosProfissionalCommand = new Command(async () => 
+            await ExecuteEditarDadosProfissionalCommand()));
 
-        private async Task ExecuteSalvarDadosProfissionaisCommand()
+        private async Task ExecuteEditarDadosProfissionalCommand()
         {
-            var profissioanal = new Profissional
+            var profissioanalDTO = new ProfissionalDto
             {
                 Nome = Nome,
                 Cpf = Cpf,
@@ -111,16 +101,28 @@ namespace Preciso.ViewModels
                 Email = Email,
                 Senha = Senha,
                 //DataAtivacao = DataAtivacao
-            };            
+            };
 
-            if (profissioanal == null)
+            await profissionalService.EditarProfissional(profissioanalDTO);
+        }
+
+        private void DadosProfissional()
+        {
+            var profissionalObitido = repositorioProfissional.ListaProfissionais();
+
+            if (profissionalObitido != null)
             {
-                await App.Current.MainPage.DisplayAlert("Cadastrar Profissional", "Erro ao cadastrar profissional", "Ok");
-            }
-            else
-            {
-                await profissionalService.CadastrarProfissional(profissioanal);
-                await App.Current.MainPage.DisplayAlert("Cadastrar Profissional", "Sucesso ao cadastrar profissional", "Ok");
+                foreach (var profissional in profissionalObitido)
+                {
+                    Nome = profissional.Nome;
+                    Cpf = profissional.Cpf;
+                    Celular = profissional.Celular;
+                    Endereco = profissional.Endereco;
+                    FormaPagamento = profissional.FormaPagamento;
+                    TipoProfissional = profissional.TipoProfissional;
+                    Email = profissional.Email;
+                    Senha = profissional.Senha;
+                }
             }
         }
     }

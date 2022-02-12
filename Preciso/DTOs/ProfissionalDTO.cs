@@ -1,6 +1,6 @@
 ﻿namespace Preciso.DTOs
 {
-    public class ProfissionalDTO
+    public class ProfissionalDto
     {
         public string Id { get; set; }
         public string Nome { get; set; }
