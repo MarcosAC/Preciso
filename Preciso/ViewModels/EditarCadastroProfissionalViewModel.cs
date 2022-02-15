@@ -20,6 +20,8 @@ namespace Preciso.ViewModels
             DadosProfissional();
         }
 
+        private string Id;
+
         private string _nome;
         public string Nome
         {
@@ -97,6 +99,7 @@ namespace Preciso.ViewModels
             {
                 var profissioanalDTO = new ProfissionalDto
                 {
+                    Id = Id,
                     Nome = Nome,
                     Cpf = Cpf,
                     Celular = Celular,
@@ -109,6 +112,7 @@ namespace Preciso.ViewModels
                 };
 
                 await profissionalService.EditarProfissional(profissioanalDTO);
+                await App.Current.MainPage.DisplayAlert("Edição Cadastro", "Cadastro edito com sucesso!", "Ok");
             }
             else
             {
@@ -124,6 +128,7 @@ namespace Preciso.ViewModels
             {
                 foreach (var profissional in profissionalObitido)
                 {
+                    Id = profissional.Id;
                     Nome = profissional.Nome;
                     Cpf = profissional.Cpf;
                     Celular = profissional.Celular;

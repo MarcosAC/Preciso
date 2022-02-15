@@ -5,8 +5,8 @@ namespace Preciso.Data.Model
     [Table("Contato")]
     public class Profissional
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        //[PrimaryKey, AutoIncrement]
+        public string Id { get; set; }
         public string Nome { get; set; }
         public string Cpf { get; set; }
         public string Celular { get; set; }

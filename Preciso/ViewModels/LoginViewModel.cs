@@ -31,7 +31,7 @@ namespace Preciso.ViewModels
         {
             get => _senha;
             set => SetProperty(ref _senha, value);
-        }        
+        }
 
         private Command _loginCommand;
         public Command LoginCommand =>
@@ -51,11 +51,13 @@ namespace Preciso.ViewModels
                 {
                     if (Email == loginProfissional.Email && Senha == loginProfissional.Senha)
                     {
-                        _repositorioProfissional.AdicionarFuncionario(DadosProfissional(loginProfissional));                       
+                        _repositorioProfissional.AdicionarFuncionario(DadosProfissional(loginProfissional));
                         await App.Current.MainPage.Navigation.PushAsync(new MenuPrincipalView());
-                    }                        
+                    }
                     else
+                    {
                         await App.Current.MainPage.DisplayAlert("Erro", "Informe o email/senha correto(s)", "Ok");
+                    }
                 }
                 else
                 {
@@ -63,11 +65,12 @@ namespace Preciso.ViewModels
                 }
             }
         }
-        
+
         private Profissional DadosProfissional(ProfissionalDto profissionalDTO)
         {
             var profissional = new Profissional
             {
+                Id = profissionalDTO.Id,
                 Nome = profissionalDTO.Nome,
                 Cpf = profissionalDTO.Cpf,
                 Celular = profissionalDTO.Celular,
