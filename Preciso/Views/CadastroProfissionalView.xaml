@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Preciso.Views"
+             x:Class="Preciso.Views.CadastroProfissionalView"
+             Title="Cadastrar Profissional">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15">
+                <local:CadastroView />
+
+                <Button Style="{StaticResource StyleButton}"
+                    Text="Cadastrar"
+                    Command="{Binding SalvarDadosProfiossionalCommand}" />
+
+                <Button Style="{StaticResource StyleButton}"
+                    Text="Cancelar" />
+            </StackLayout>
+        </ScrollView>        
+    </ContentPage.Content>
+</ContentPage>

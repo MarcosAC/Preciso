@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Preciso.Cliente.Views.SolicitarServicoView"
+             Title="Solicitar Serviço">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowDefinitions="*,*,*,250,*" Padding="15">
+                <Entry Grid.Row="0"
+					   Placeholder="Nome"
+                       Text="{Binding NomeCliente}" />
+                <Entry Grid.Row="1"
+					   Placeholder="Contato"
+                       Text="{Binding ContatoCliente}" />
+                <Entry Grid.Row="2"
+                       Placeholder="Tipo de Serviço"
+                       Text="{Binding Titulo}"/>
+
+                <Editor Grid.Row="3"
+                        Placeholder="Descrição do Serviço"
+                        HeightRequest="150"
+                        Text="{Binding Descricao}" />
+
+                <!--<Image Grid.Row="4"
+                       Source="{Binding Foto}" />
+
+                <Button Grid.Row="5"
+                        Style="{StaticResource StyleButton}"
+                        Text="Enviar Imagem do Serviço"
+                        Command="{Binding AdicionarFotoCommand}" />-->
+                
+                <Button Grid.Row="4"
+                        Style="{StaticResource StyleButton}"
+                        Text="Solicitar Serviço"
+                        Command="{Binding EnviarSolicitacaoServicoCommand}" />
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Preciso.Cliente.Views.LoginView"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15"
+                         VerticalOptions="Center">
+                <Entry Style="{StaticResource StyleEntry}"
+					   Placeholder="Nome ou Email"
+                       Text="{Binding Email}" />
+
+                <Entry Style="{StaticResource StyleEntry}"
+					   Placeholder="Senha"
+                       Text="{Binding Senha}"
+                       IsPassword="true" />
+
+                <Button	Style="{StaticResource StyleButton}"
+                        Text="Entrar"
+                        Command="{Binding LoginCommand}" />
+                <Button Style="{StaticResource StyleButton}"
+                        Text="Cancelar" />
+
+                <Label Text="Criar Conta"
+                       FontSize="Subtitle" 
+                       HorizontalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTapCriarConta" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label Text="Esqueci minha senha."
+                       FontSize="Subtitle" 
+                       HorizontalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTapEsqueciSenha" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

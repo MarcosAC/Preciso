@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Preciso.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StartPageView : ContentPage
+    public partial class CadastroView : ContentView
     {
-        public StartPageView()
+        public CadastroView()
         {
             InitializeComponent();
         }
