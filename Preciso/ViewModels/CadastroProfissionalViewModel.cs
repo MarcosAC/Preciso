@@ -9,12 +9,10 @@ namespace Preciso.ViewModels
     public class CadastroProfissionalViewModel : BaseViewModel
     {
         private readonly ProfissionalService profissionalService;
-        private readonly RepositorioProfissional repositorioProfissional;
 
         public CadastroProfissionalViewModel()
         {
             profissionalService = new ProfissionalService();
-            repositorioProfissional = new RepositorioProfissional();
         }
 
         private string _nome;

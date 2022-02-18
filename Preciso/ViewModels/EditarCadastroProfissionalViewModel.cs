@@ -1,6 +1,7 @@
 ﻿using Preciso.Data;
 using Preciso.Data.LocalData.Repositorio;
 using Preciso.DTOs;
+using System;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -10,17 +11,19 @@ namespace Preciso.ViewModels
     public class EditarCadastroProfissionalViewModel : BaseViewModel
     {
         private readonly ProfissionalService profissionalService;
-        private readonly RepositorioProfissional repositorioProfissional;
+        private readonly IRepositorioProfissional repositorioProfissional;
 
         public EditarCadastroProfissionalViewModel()
         {
             profissionalService = new ProfissionalService();
-            repositorioProfissional = new RepositorioProfissional();
+            repositorioProfissional = DependencyService.Get<IRepositorioProfissional>();
 
             DadosProfissional();
         }
 
         private string Id;
+        private DateTime DataAtivacao;
+        private DateTime DataDesativado;
 
         private string _nome;
         public string Nome
@@ -137,6 +140,9 @@ namespace Preciso.ViewModels
                     TipoProfissional = profissional.TipoProfissional;
                     Email = profissional.Email;
                     Senha = profissional.Senha;
+                    Ativo = profissional.Ativo;
+                    DataAtivacao = profissional.DataAtivacao;
+                    DataDesativado = profissional.DataDesativado;
                 }
             }
         }

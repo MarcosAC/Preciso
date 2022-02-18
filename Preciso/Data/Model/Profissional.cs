@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using System;
 
 namespace Preciso.Data.Model
 {
@@ -15,5 +16,8 @@ namespace Preciso.Data.Model
         public string TipoProfissional { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
+        public bool Ativo { get; set; }
+        public DateTime DataAtivacao { get; set; }
+        public DateTime DataDesativado { get; set; }
     }
 }

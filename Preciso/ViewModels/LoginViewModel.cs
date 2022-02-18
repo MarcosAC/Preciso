@@ -11,12 +11,12 @@ namespace Preciso.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         private readonly LoginService _loginService;
-        private readonly RepositorioProfissional _repositorioProfissional;
+        private readonly IRepositorioProfissional repositorioProfissional;
 
         public LoginViewModel()
         {
             _loginService = new LoginService();
-            _repositorioProfissional = new RepositorioProfissional();
+            repositorioProfissional = DependencyService.Get<IRepositorioProfissional>();
         }
 
         private string _email;
@@ -51,7 +51,7 @@ namespace Preciso.ViewModels
                 {
                     if (Email == loginProfissional.Email && Senha == loginProfissional.Senha)
                     {
-                        _repositorioProfissional.AdicionarFuncionario(DadosProfissional(loginProfissional));
+                        repositorioProfissional.AdicionarFuncionario(DadosProfissional(loginProfissional));
                         await App.Current.MainPage.Navigation.PushAsync(new MenuPrincipalView());
                     }
                     else
@@ -76,9 +76,12 @@ namespace Preciso.ViewModels
                 Celular = profissionalDTO.Celular,
                 Endereco = profissionalDTO.Endereco,
                 FormaPagamento = profissionalDTO.FormaPagamento,
+                TipoProfissional = profissionalDTO.TipoProfissional,
                 Email = profissionalDTO.Email,
                 Senha = profissionalDTO.Senha,
-                TipoProfissional = profissionalDTO.TipoProfissional
+                Ativo = profissionalDTO.Ativo,
+                DataAtivacao = profissionalDTO.DataAtivacao,
+                DataDesativado = profissionalDTO.DataDesativado
             };
 
             return profissional;

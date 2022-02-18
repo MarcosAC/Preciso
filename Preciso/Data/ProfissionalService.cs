@@ -11,7 +11,7 @@ namespace Preciso.Data
 {
     public class ProfissionalService
     {
-        FirebaseClient firebase = new FirebaseClient("https://presicoapp-default-rtdb.firebaseio.com/");
+        private readonly FirebaseClient firebase = new FirebaseClient("https://presicoapp-default-rtdb.firebaseio.com/");
 
         public async Task CadastrarProfissional(Profissional profissional) =>
             await firebase.Child("Profissionais").PostAsync(profissional);
@@ -27,15 +27,20 @@ namespace Preciso.Data
                 .Child(toUpdateContato.Key)
                   .PutAsync(new ProfissionalDto()
                   {
+                      Id = profissionalDTO.Id,
                       Nome = profissionalDTO.Nome,
                       Cpf = profissionalDTO.Cpf,
                       Celular = profissionalDTO.Celular,
                       Endereco = profissionalDTO.Endereco,
                       FormaPagamento = profissionalDTO.FormaPagamento,
                       TipoProfissional = profissionalDTO.TipoProfissional,
-                      Email = profissionalDTO.Email
+                      Email = profissionalDTO.Email,
+                      Senha = profissionalDTO.Senha,
+                      Ativo = profissionalDTO.Ativo,
+                      DataAtivacao = profissionalDTO.DataAtivacao,
+                      DataDesativado = profissionalDTO.DataDesativado                      
                   });
-    }
+        }
 
         public async Task DeletarProfissional(Guid id)
         {
@@ -75,9 +80,12 @@ namespace Preciso.Data
                     Celular = item.Object.Celular,
                     Endereco = item.Object.Endereco,
                     FormaPagamento = item.Object.FormaPagamento,
+                    TipoProfissional = item.Object.TipoProfissional,
                     Email = item.Object.Email,
                     Senha = item.Object.Senha,
-                    TipoProfissional = item.Object.TipoProfissional
+                    Ativo = item.Object.Ativo,
+                    DataAtivacao = item.Object.DataAtivacao,
+                    DataDesativado = item.Object.DataDesativado
                 })
                 .ToList();
     }
