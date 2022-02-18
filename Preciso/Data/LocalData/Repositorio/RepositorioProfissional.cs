@@ -1,6 +1,9 @@
-﻿using Preciso.Data.Model;
+﻿using Preciso.Data.LocalData.Repositorio;
+using Preciso.Data.Model;
 using System.Collections.Generic;
+using Xamarin.Forms;
 
+[assembly:Dependency(typeof(RepositorioProfissional))]
 namespace Preciso.Data.LocalData.Repositorio
 {
     public class RepositorioProfissional : IRepositorioProfissional

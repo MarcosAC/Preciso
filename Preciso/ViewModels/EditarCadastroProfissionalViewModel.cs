@@ -9,13 +9,13 @@ namespace Preciso.ViewModels
 {
     public class EditarCadastroProfissionalViewModel : BaseViewModel
     {
-        private readonly ProfissionalService profissionalService;
-        private readonly RepositorioProfissional repositorioProfissional;
+        private readonly ProfissionalService _profissionalService;
+        private readonly IRepositorioProfissional _repositorioProfissional;
 
         public EditarCadastroProfissionalViewModel()
         {
-            profissionalService = new ProfissionalService();
-            repositorioProfissional = new RepositorioProfissional();
+            _profissionalService = new ProfissionalService();
+            _repositorioProfissional = DependencyService.Get<IRepositorioProfissional>();
 
             DadosProfissional();
         }
@@ -111,7 +111,7 @@ namespace Preciso.ViewModels
                     //DataAtivacao = DataAtivacao
                 };
 
-                await profissionalService.EditarProfissional(profissioanalDTO);
+                await _profissionalService.EditarProfissional(profissioanalDTO);
                 await App.Current.MainPage.DisplayAlert("Edição Cadastro", "Cadastro edito com sucesso!", "Ok");
             }
             else
@@ -122,7 +122,7 @@ namespace Preciso.ViewModels
 
         private void DadosProfissional()
         {
-            var profissionalObitido = repositorioProfissional.ListaProfissionais();
+            var profissionalObitido = _repositorioProfissional.ListaProfissionais();
 
             if (profissionalObitido != null)
             {

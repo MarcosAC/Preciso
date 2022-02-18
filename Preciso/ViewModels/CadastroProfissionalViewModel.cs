@@ -1,5 +1,4 @@
 ﻿using Preciso.Data;
-using Preciso.Data.LocalData.Repositorio;
 using Preciso.Models;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -9,12 +8,10 @@ namespace Preciso.ViewModels
     public class CadastroProfissionalViewModel : BaseViewModel
     {
         private readonly ProfissionalService profissionalService;
-        private readonly RepositorioProfissional repositorioProfissional;
 
         public CadastroProfissionalViewModel()
         {
             profissionalService = new ProfissionalService();
-            repositorioProfissional = new RepositorioProfissional();
         }
 
         private string _nome;

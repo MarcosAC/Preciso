@@ -11,12 +11,12 @@ namespace Preciso.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         private readonly LoginService _loginService;
-        private readonly RepositorioProfissional _repositorioProfissional;
+        private readonly IRepositorioProfissional _repositorioProfissional;
 
         public LoginViewModel()
         {
             _loginService = new LoginService();
-            _repositorioProfissional = new RepositorioProfissional();
+            _repositorioProfissional = DependencyService.Get<IRepositorioProfissional>();
         }
 
         private string _email;
